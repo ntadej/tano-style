@@ -1,0 +1,19 @@
+{
+  "name": "tano-style",
+  "version": "0.1.0",
+  "authors": [
+    "Tadej Novak <tadej@tano.si>"
+  ],
+  "description": "Common style for tano.si webpages",
+  "main": "tano-style.scss",
+  "license": "MIT",
+  "homepage": "https://tano.si",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bulma": "^0.1.0"
+  }
+}
