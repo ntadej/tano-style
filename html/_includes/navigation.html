@@ -1,0 +1,18 @@
+<header class="nav">
+  <div class="container">
+    <div class="nav-left">
+      <a class="nav-item nav-title is-active title is-3" href="{{ site.baseurl }}">
+        <span class="logo"></span>
+        {{ site.title }}
+      </a>
+    </div>
+    <span class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <div class="nav-right nav-menu">
+      {% include navigation-items.html %}
+    </div>
+  </div>
+</header>
