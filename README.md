@@ -10,8 +10,8 @@ Feel free to open a pull request if some content needs updating.
 
 You will need the following things properly installed on your computer.
 
-* [Git](http://git-scm.com/)
-* [Bower](http://bower.io/)
+* [Git](http://git-scm.com)
+* [npm](https://www.npmjs.com)
 
 
 [web]: https://tano.si
