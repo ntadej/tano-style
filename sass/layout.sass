@@ -1,7 +1,6 @@
-.nav
-  > .container
-    +touch
-      margin: 0 10px
+.section
+  +mobile
+    padding-top: 20px
 
 .hero
   .hero-foot-container
@@ -11,3 +10,45 @@
     $gradient-center: lighten($brand-secondary, 10%)
     $gradient-bottom-right: $brand-secondary
     background-image: linear-gradient(141deg, $gradient-top-left 0%, $gradient-center 71%, $gradient-bottom-right 100%)
+
+#hero-home
+  .hero-body
+    .title
+      font-size: $size-2
+      +mobile
+        font-size: $size-3
+
+    .tabs
+      margin-bottom: 0
+
+    +mobile
+      padding: 20px 20px
+
+.columns
+  &.is-reversed
+    flex-direction: row-reverse
+
+  .column
+    max-width: 100%
+
+.has-text-centered-mobile
+  +mobile
+    text-align: center
+
+.tabs
+  &.has-text-centered-mobile
+    +mobile
+      ul
+        justify-content: center
+
+.is-tab
+  display: none
+  &.is-active
+    display: block
+
+.anchor
+  position: relative
+  display: block
+  top: -40px
+  +mobile
+    top: -20px

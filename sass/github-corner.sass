@@ -1,0 +1,36 @@
+.github-corner
+  svg
+    fill: #FFF
+    color: $primary
+    position: absolute
+    top: 0
+    border: 0
+    left: 0
+    transform: scale(-1, 1)
+
+  .octo-arm
+    transform-origin: 130px 106px
+
+  &:hover
+    .octo-arm
+      animation: octocat-wave 560ms ease-in-out
+
+@keyframes octocat-wave
+  0%
+    transform: rotate(0)
+  20%
+    transform: rotate(-25deg)
+  40%
+    transform: rotate(10deg)
+  60%
+    transform: rotate(-25deg)
+  80%
+    transform: rotate(10deg)
+  100%
+    transform: rotate(0)
+
+@media (max-width:500px)
+  .github-corner:hover .octo-arm
+    animation: none
+  .github-corner .octo-arm
+    animation: octocat-wave 560ms ease-in-out

@@ -1,3 +1,64 @@
 .nav
+  .container
+    box-sizing: content-box
+    padding: 0 20px
+    +mobile
+      padding-right: 0
+
+  .logo
+    float: left
+    width: 48px
+    height: 48px
+    margin-right: 12px
+
+    +mobile
+      width: 24px
+      height: 24px
+
   .nav-title
+    line-height: 1
+    font-size: $size-3
     font-weight: 500
+    +mobile
+      font-size: $size-4
+
+.footer .level
+  +tablet
+    .level-left
+      align-items: stretch
+      display: flex
+      flex: 1
+      justify-content: flex-start
+      overflow: hidden
+      overflow-x: auto
+      white-space: nowrap
+
+      .has-special-links
+        a
+          margin-right: 12px
+
+    .level-center
+      align-items: stretch
+      display: flex
+      justify-content: center
+
+    .level-right
+      text-align: right
+      align-items: stretch
+      display: flex
+      flex: 1
+      justify-content: flex-end
+
+      .has-special-links
+        a
+          margin-left: 12px
+
+  +mobile
+    text-align: center
+
+    .level-center
+      display: none
+
+    .has-special-links
+      a
+        margin: 0 6px
