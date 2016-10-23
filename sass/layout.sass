@@ -5,6 +5,7 @@
 .hero
   .hero-foot-container
     margin: 0 auto
+
   &.has-gradient
     $gradient-top-left: $brand-primary
     $gradient-center: lighten($brand-secondary, 10%)
@@ -15,6 +16,7 @@
   .hero-body
     .title
       font-size: $size-1
+
       +mobile
         font-size: $size-1-mobile
 
@@ -24,9 +26,11 @@
     +mobile
       padding: 20px 20px
 
-.columns
-  &.is-reversed
-    flex-direction: row-reverse
+.is-hidden-weak
+  display: none
+
+.is-reversed
+  flex-direction: row-reverse
 
 .has-text-centered-mobile
   +mobile
@@ -40,6 +44,7 @@
 
 .is-tab
   display: none
+
   &.is-active
     display: block
 
@@ -47,5 +52,6 @@
   position: relative
   display: block
   top: -40px
+
   +mobile
     top: -20px
