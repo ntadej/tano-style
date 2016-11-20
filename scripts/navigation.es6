@@ -1,7 +1,7 @@
 const Navigation = {
   init: function () {
     const body = $('body');
-    const nav = body.find('header.nav-primary');
+    const nav = body.find('header.nav-primary, nav.nav-primary');
 
     const toggle = nav.find('.nav-toggle');
     toggle.click((event) => {
