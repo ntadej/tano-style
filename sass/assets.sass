@@ -8,3 +8,19 @@
 
     +mobile
       background-size: contain
+
+.footer
+  a.logo
+    display: block
+    width: 24px
+    height: 12px
+    border-bottom: 0 !important
+    transition: none
+    background: url(asset_path("logo/small.png")) no-repeat left
+
+    &:hover
+      background-position: (-24px) 0
+
+    +retina
+      background-image: url(asset_path("logo/small@2x.png"))
+      background-size: 48px 12px

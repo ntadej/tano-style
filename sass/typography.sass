@@ -1,6 +1,10 @@
 body
   -webkit-text-size-adjust: 100%
 
+\::selection
+  color: #fff
+  background: $brand-primary
+
 p
   margin-bottom: 0.8em
 
@@ -39,3 +43,10 @@ p
 
 .footer
   font-size: 14px
+
+  a
+    border-bottom: 0 !important
+
+    &:hover,
+    &:visited:hover
+      color: $link-hover
