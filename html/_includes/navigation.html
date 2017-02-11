@@ -1,18 +1,22 @@
-<header class="nav nav-primary has-shadow">
-  <div class="container">
-    <div class="nav-left">
-      <a class="nav-item nav-title is-active" href="{{ "/" | prepend: site.baseurl }}">
-        <span class="logo"></span>
-        {{ site.title }}
-      </a>
-    </div>
-    <span class="nav-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </span>
-    <div class="nav-right nav-menu">
-      {% include navigation-items.html %}
-    </div>
+<section class="hero is-primary">
+  <div class="hero-head">
+    <header class="nav">
+      <div class="container">
+        <div class="nav-left">
+          <a class="nav-item nav-title is-active" href="{{ "/" | prepend: site.baseurl }}">
+            <span class="logo"></span>
+            {{ site.title }}
+          </a>
+        </div>
+        <span class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <div class="nav-right nav-menu">
+          {% include navigation-items.html %}
+        </div>
+      </div>
+    </header>
   </div>
-</header>
+</section>
