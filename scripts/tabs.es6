@@ -28,4 +28,4 @@ const Tabs = {
 
     tabs.find('li.is-active a').click();
   }
-}
+};
