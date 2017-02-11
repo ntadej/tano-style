@@ -4,3 +4,15 @@
 
 =hover-animation
   transition: color 0.2s, background 0.2s, border-color 0.2s
+
+=background($file, $extra)
+  @if $jekyll
+    background: url(asset_path($file)) unquote($extra)
+  @else
+    background: url($file) unquote($extra)
+
+=background-image($file)
+  @if $jekyll
+    background-image: url(asset_path($file))
+  @else
+    background-image: url($file)

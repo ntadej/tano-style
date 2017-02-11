@@ -8,9 +8,11 @@ body
 p
   margin-bottom: 0.8em
 
+.is-primary
+  color: $primary
+
 .title
   color: $brand-secondary
-  font-weight: $weight-title-bold
 
   &:not(:first-child)
     padding-top: 10px
@@ -42,10 +44,8 @@ p
     margin-top: -10px
 
 .footer
-  font-size: 14px
-
   a
-    border-bottom: 0 !important
+    color: $grey-darker
 
     &:hover,
     &:visited:hover
