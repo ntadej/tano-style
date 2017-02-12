@@ -1,6 +1,6 @@
 # Logo
 name=("normal" "normal@2x" "mobile" "mobile@2x")
-sizes=(60 120 30 60)
+sizes=(60 120 40 80)
 
 length=${#name[@]}
 
