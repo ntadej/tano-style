@@ -5,10 +5,10 @@ layout: null
 <browserconfig>
   <msapplication>
     <tile>
-      <square70x70logo src="{% asset_path favicon/mstile_70.png %}"/>
-      <square150x150logo src="{% asset_path favicon/mstile_150.png %}"/>
-      <square310x310logo src="{% asset_path favicon/mstile_310.png %}"/>
-      <wide310x150logo src="{% asset_path favicon/mstile_310x150.png %}.png"/>
+      <square70x70logo src="{% asset favicon/mstile_70.png @path %}"/>
+      <square150x150logo src="{% asset favicon/mstile_150.png @path %}"/>
+      <square310x310logo src="{% asset favicon/mstile_310.png @path %}"/>
+      <wide310x150logo src="{% asset favicon/mstile_310x150.png @path %}.png"/>
       <TileColor>{{ site.primary_color }}</TileColor>
     </tile>
   </msapplication>

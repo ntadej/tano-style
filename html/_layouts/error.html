@@ -7,7 +7,7 @@
 
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 
-    {% stylesheet main %}
+    {% asset main.css %}
 
     {% include common/favicons.html %}
   </head>
@@ -19,7 +19,11 @@
           <div class="columns has-text-centered">
             <div class="column">
               <h1>{{ page.title }}</h1>
+              {% if page.subtitle %}
+              <h2>{{ page.subtitle }}</h2>
+              {% else %}
               <h2>Oops, you've encountered an error</h2>
+              {% endif %}
 
               {{ content }}
 
@@ -32,7 +36,7 @@
       </div>
 
       <div class="hero-foot has-text-centered">
-        &copy; 2004-2017 Tadej Novak
+        &copy; 2004-2018 Tadej Novak
       </div>
     </section>
   </body>
