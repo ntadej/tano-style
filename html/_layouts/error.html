@@ -27,9 +27,11 @@
 
               {{ content }}
 
+              {% unless page.plain %}
               <p>
                 <a href="{{ site.url }}" class="button is-primary is-hero is-large">Home</a>
               </p>
+              {% endunless %}
             </div>
           </div>
         </div>
