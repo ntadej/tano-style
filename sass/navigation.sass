@@ -1,17 +1,12 @@
-.nav
+.navbar
   .container
     box-sizing: content-box
     padding: 0 20px
 
-    &.is-reversed
-      +mobile
-        padding-right: 20px
-        padding-left: 0
+    +touch
+      padding-left: 0
 
-    +mobile
-      padding-right: 0
-
-  .nav-title
+  .navbar-brand
     line-height: 1
     font-size: $size-5
     font-weight: 500

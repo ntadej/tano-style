@@ -13,12 +13,16 @@ p
 
 .title
   color: $brand-secondary
+  font-weight: $weight-light
 
   &:not(:first-child)
     padding-top: 10px
 
   &:not(:last-child)
     margin-bottom: 15px
+
+.subtitle
+  font-weight: $weight-light
 
 @each $size in $sizes
   $i: index($sizes, $size)
@@ -27,6 +31,8 @@ p
   h#{$i}
     @extend .title
     font-size: $size
+    font-weight: $weight-light
+
     +mobile
       font-size: nth($sizes-mobile, $i)
 
@@ -41,7 +47,8 @@ p
 
   .subtitle
     font-size: $size-4
-    margin-top: -10px
+    font-weight: $weight-light
+    margin-top: (-10px) !important
 
 .footer
   font-size: 14px

@@ -7,12 +7,12 @@
 
 =background($file, $extra)
   @if $jekyll
-    background: url(asset_path($file)) unquote($extra)
+    background: asset_url($file) unquote($extra)
   @else
     background: url($file) unquote($extra)
 
 =background-image($file)
   @if $jekyll
-    background-image: url(asset_path($file))
+    background-image: asset_url($file)
   @else
     background-image: url($file)
