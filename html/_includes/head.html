@@ -19,5 +19,8 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
 {% include common/favicons.html %}
+
+{% unless site.without_analytics %}
 {% include common/analytics.html %}
+{% endunless %}
 </head>
