@@ -5,7 +5,11 @@
 
 {{ content }}
 
+{% if site.custom_footer %}
+{% include footer.html %}
+{% else %}
 {% include common/footer.html %}
+{% endif %}
 
 </body>
 </html>
