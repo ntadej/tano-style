@@ -33,7 +33,7 @@ p
     font-size: $size
     font-weight: $weight-light
 
-    +mobile
+    @include mobile
       font-size: nth($sizes-mobile, $i)
 
   h#{$i} + h#{$i},

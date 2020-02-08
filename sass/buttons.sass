@@ -1,8 +1,8 @@
 a:not(.button)
-  +hover-animation
+  @include hover-animation
 
 .button
-  +hover-animation
+  @include hover-animation
 
   @each $name, $pair in $colors
     $color: nth($pair, 1)

@@ -6,12 +6,11 @@
     border-bottom: 0 !important
     transition: none
 
-    +background("logo/small.png", "no-repeat left")
+    @include background("logo/small.png", "no-repeat left")
 
     &:hover
       background-position: (-24px) 0
 
-    +retina
-      +background-image("logo/small@2x.png")
-
+    @include retina
       background-size: 48px 12px
+      @include background-image("logo/small@2x.png")

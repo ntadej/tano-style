@@ -3,7 +3,7 @@
     box-sizing: content-box
     padding: 0 20px
 
-    +touch
+    @include touch
       padding-left: 0
 
   .navbar-brand
@@ -16,7 +16,7 @@
     .level-item:first-of-type
       display: block
 
-  +tablet
+  @include tablet
     .level-left
       align-items: stretch
       display: flex
@@ -46,7 +46,7 @@
         a
           margin-left: 12px
 
-  +mobile
+  @include mobile
     text-align: center
 
     .level-center
