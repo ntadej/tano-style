@@ -9,9 +9,10 @@ layout: personal
     </div>
 
     <div class="archive">
-{% for post in page.posts %}
-      <h4><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> <small>{{ post.date | date: "%B %-d, %Y" }}</small></h4>
-{% endfor %}
+      {% for post in page.posts %}
+      <h4><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <small>{{ post.date | date: "%B %-d, %Y" }}</small></h4>
+      {% endfor %}
     </div>
   </div>
 </section>

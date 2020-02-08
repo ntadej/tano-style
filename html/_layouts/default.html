@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 {% include common/head.html %}
+
 <body>
 
-{{ content }}
+    {{ content }}
 
-{% if site.custom_footer %}
-{% include footer.html %}
-{% else %}
-{% include common/footer.html %}
-{% endif %}
+    {% if site.custom_footer %}
+    {% include footer.html %}
+    {% else %}
+    {% include common/footer.html %}
+    {% endif %}
 
 </body>
+
 </html>

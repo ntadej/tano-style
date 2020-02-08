@@ -9,14 +9,15 @@ layout: personal
     </div>
 
     <div class="archive">
-{% for post in page.posts %}
-  {% capture currentdate %}{{post.date | date: "%Y"}}{% endcapture %}
-  {% if currentdate != thedate %}
+      {% for post in page.posts %}
+      {% capture currentdate %}{{post.date | date: "%Y"}}{% endcapture %}
+      {% if currentdate != thedate %}
       <h3>{{ currentdate }}</h3>
       {% capture thedate %}{{currentdate}}{% endcapture %}
-  {% endif %}
-      <h4><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> <small>{{ post.date | date: "%B %-d, %Y" }}</small></h4>
-{% endfor %}
+      {% endif %}
+      <h4><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <small>{{ post.date | date: "%B %-d, %Y" }}</small></h4>
+      {% endfor %}
     </div>
   </div>
 </section>

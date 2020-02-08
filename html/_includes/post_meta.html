@@ -1,20 +1,27 @@
-        <h2 class="subtitle post-meta">
-            <span class="ion-calendar"></span>
-            <span class="date"><a href="{{ site.baseurl}}{{ post.url }}" title="Permalink to {{ post.title }}" rel="bookmark"><time class="entry-date" datetime="{{ post.date | date: "%FT%T"}}+00:00">{{ post.date | date: "%B %-d, %Y" }}</time></a></span>
+<h2 class="subtitle post-meta">
+  <span class="ion-calendar"></span>
+  <span class="date">
+    <a href="{{ site.baseurl}}{{ post.url }}" title="Permalink to {{ post.title }}" rel="bookmark">
+      <time class="entry-date"
+        datetime="{{ post.date | date: "%FT%T"}}+00:00">{{ post.date | date: "%B %-d, %Y" }}</time>
+    </a>
+  </span>
 
-            {% if post.categories %}
-            <span class="ion-filing"></span><span class="categories-links">
-            {% for category in post.categories %}
-                <a href="{{ site.baseurl }}/category/{{ category | replace:' ','-' | downcase }}/">{{ category | capitalize }}</a>{% if forloop.last != true %},{% endif %}
-            {% endfor %}
-            </span>
-            {% endif %}
+  {% if post.categories %}
+  <span class="ion-filing"></span><span class="categories-links">
+    {% for category in post.categories %}
+    <a
+      href="{{ site.baseurl }}/category/{{ category | replace:' ','-' | downcase }}/">{{ category | capitalize }}</a>{% if forloop.last != true %},{% endif %}
+    {% endfor %}
+  </span>
+  {% endif %}
 
-            {% if post.tags.size != 0 %}
-            <span class="ion-pricetags"></span><span class="tags-links">
-            {% for tag in post.tags %}
-                <a href="{{ site.baseurl }}/tag/{{ tag | replace:' ','-' | downcase }}/">{{ tag }}</a>{% if forloop.last != true %},{% endif %}
-            {% endfor %}
-            </span>
-            {% endif %}
-        </h2>
+  {% if post.tags.size != 0 %}
+  <span class="ion-pricetags"></span><span class="tags-links">
+    {% for tag in post.tags %}
+    <a
+      href="{{ site.baseurl }}/tag/{{ tag | replace:' ','-' | downcase }}/">{{ tag }}</a>{% if forloop.last != true %},{% endif %}
+    {% endfor %}
+  </span>
+  {% endif %}
+</h2>
