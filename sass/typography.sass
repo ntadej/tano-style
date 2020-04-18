@@ -11,34 +11,36 @@ p
 .is-primary
   color: $primary
 
-.title
-  color: $brand-secondary
-  font-weight: $weight-light
-
-  &:not(:first-child)
-    padding-top: 10px
-
-  &:not(:last-child)
-    margin-bottom: 15px
-
-.subtitle
-  font-weight: $weight-light
-
-@each $size in $sizes
-  $i: index($sizes, $size)
-  $ip: $i + 1
-
-  h#{$i}
-    @extend .title
-    font-size: $size
+.content, .heading, .hero
+  .title
+    color: $brand-secondary
     font-weight: $weight-light
 
-    @include mobile
-      font-size: nth($sizes-mobile, $i)
+    &:not(:first-child)
+      padding-top: 10px
 
-  h#{$i} + h#{$i},
-  h#{$i} + h#{$ip}
-    padding-top: 0 !important
+    &:not(:last-child)
+      margin-bottom: 15px
+
+  .subtitle
+    color: $subtitle-color
+    font-weight: $weight-light
+
+  @each $size in $sizes
+    $i: index($sizes, $size)
+    $ip: $i + 1
+
+    h#{$i}
+      @extend .title
+      font-size: $size
+      font-weight: $weight-light
+
+      @include mobile
+        font-size: nth($sizes-mobile, $i)
+
+    h#{$i} + h#{$i},
+    h#{$i} + h#{$ip}
+      padding-top: 0 !important
 
 .heading
   text-align: center

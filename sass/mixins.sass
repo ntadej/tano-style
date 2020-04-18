@@ -6,13 +6,7 @@
   transition: color 0.2s, background 0.2s, border-color 0.2s
 
 @mixin background($file, $extra)
-  @if $jekyll
-    background: asset_url($file) unquote($extra)
-  @else
-    background: url($file) unquote($extra)
+  background: url($file) unquote($extra)
 
 @mixin background-image($file)
-  @if $jekyll
-    background-image: asset_url($file)
-  @else
-    background-image: url($file)
+  background-image: url($file)
