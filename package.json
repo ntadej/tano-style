@@ -7,15 +7,22 @@
   "homepage": "https://github.com/ntadej/tano-style#readme",
   "repository": "ntadej/tano-style",
   "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
+  },
   "dependencies": {
     "bulma": "^0.8.2",
-    "next": "9.3.4",
-    "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "next": "^9.3.5",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "sass": "^1.26.0"
   },
   "devDependencies": {
-    "@types/node": "^13.11.1",
+    "@types/node": "^13.13.0",
     "@types/react": "^16.9.34",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.0"
   }
 }
