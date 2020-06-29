@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import ErrorLayout from '../layouts/ErrorLayout'
+import ErrorLayout from 'layouts/ErrorLayout'
 
 type Props = {
   statusCode: string

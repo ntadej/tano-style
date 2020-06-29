@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react'
-import HeadSetup from './HeadSetup'
+import HeadSetup from 'layouts/HeadSetup'
 
 type Props = {
   title: string
