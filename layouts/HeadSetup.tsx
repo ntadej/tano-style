@@ -14,7 +14,7 @@ const Layout: FunctionComponent<Props> = ({
   siteColor
 }) => (
     <Head>
-      <title>{title} - {siteTitle}</title>
+      <title>{title ? title + '-' + siteTitle : siteTitle}</title>
       <meta charSet="utf-8" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
