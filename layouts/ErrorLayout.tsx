@@ -1,18 +1,22 @@
 import { FunctionComponent } from 'react'
-import HeadSetup from 'layouts/HeadSetup'
+import HeadSetup from './HeadSetup'
 
 type Props = {
   title: string
   text: string
+  siteTitle?: string
+  siteColor?: string
 }
 
 const ErrorLayout: FunctionComponent<Props> = ({
   children,
   title,
-  text
+  text,
+  siteTitle = "Tano.si",
+  siteColor = "#DE2A4A"
 }) => (
     <section className="hero hero-error is-fullheight">
-      <HeadSetup title={title} siteTitle="Tano.si" siteColor="#DE2A4A" />
+      <HeadSetup title={title} siteTitle={siteTitle} siteColor={siteColor} />
 
       <div className="hero-body error">
         <h1 className="error-title">{title}</h1>
