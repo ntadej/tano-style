@@ -8,11 +8,22 @@
   "repository": "ntadej/tano-style",
   "private": true,
   "scripts": {
+    "lint-eslint": "eslint . --ext js,jsx,ts,tsx --max-warnings=0",
+    "lint-eslint-fix": "eslint . --ext js,jsx,ts,tsx --fix --max-warnings=0",
+    "lint-sass": "stylelint \"**/*.sass\"",
+    "lint-typescript": "tsc --noEmit --declaration",
+    "prettier-check": "prettier --check .",
+    "prettier-fix": "prettier --write .",
+    "lint-fix": "run-s prettier-fix && lint-eslint-fix",
+    "lint": "run-p lint-typescript prettier-check lint-eslint lint-sass",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "export": "next export"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "dependencies": {
     "bulma": "~0.9.2",
     "next": "~10.0.9",
@@ -23,6 +34,15 @@
   "devDependencies": {
     "@types/node": "^14.14.37",
     "@types/react": "^17.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.20.0",
+    "@typescript-eslint/parser": "^4.20.0",
+    "eslint": "^7.23.0",
+    "npm-run-all": "^4.1.5",
+    "pre-commit": "^1.2.2",
+    "prettier": "2.2.1",
+    "stylelint": "^13.12.0",
+    "stylelint-config-sass-guidelines": "^8.0.0",
+    "stylelint-scss": "^3.19.0",
     "typescript": "^4.2.3"
   }
 }

@@ -1,7 +1,6 @@
-The MIT License (MIT)
-=====================
+# The MIT License (MIT)
 
-Copyright © 2016 Tadej Novak <tadej@tano.si>
+Copyright © 2021 Tadej Novak <tadej@tano.si>
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation

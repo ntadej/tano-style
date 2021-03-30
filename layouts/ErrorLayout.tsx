@@ -12,24 +12,22 @@ const ErrorLayout: FunctionComponent<Props> = ({
   children,
   title,
   text,
-  siteTitle = "Tano.si",
-  siteColor = "#DE2A4A"
+  siteTitle = 'Tano.si',
+  siteColor = '#DE2A4A',
 }) => (
-    <section className="hero hero-error is-fullheight">
-      <HeadSetup title={title} siteTitle={siteTitle} siteColor={siteColor} />
+  <section className="hero hero-error is-fullheight">
+    <HeadSetup title={title} siteTitle={siteTitle} siteColor={siteColor} />
 
-      <div className="hero-body error">
-        <h1 className="error-title">{title}</h1>
-        <div className="error-subtitle-container">
-          <h2 className="error-subtitle">{text}</h2>
-        </div>
-        {children}
+    <div className="hero-body error">
+      <h1 className="error-title">{title}</h1>
+      <div className="error-subtitle-container">
+        <h2 className="error-subtitle">{text}</h2>
       </div>
+      {children}
+    </div>
 
-      <div className="hero-foot">
-        &copy; 2004-2021 Tadej Novak
-      </div>
-    </section>
-  )
+    <div className="hero-foot">&copy; 2004-2021 Tadej Novak</div>
+  </section>
+)
 
 export default ErrorLayout
