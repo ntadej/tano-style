@@ -20,26 +20,10 @@ const Layout: FunctionComponent<Props> = ({
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
     <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple_76.png" />
-    <link
-      rel="apple-touch-icon"
-      sizes="120x120"
-      href="/favicon/apple_60@2x.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="152x152"
-      href="/favicon/apple_76@2x.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="167x167"
-      href="/favicon/apple_83.5@2x.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/favicon/apple_60@3x.png"
-    />
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple_60@2x.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple_76@2x.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/favicon/apple_83.5@2x.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple_60@3x.png" />
     <link rel="icon" type="image/png" href="/favicon/32.png" sizes="32x32" />
     <link rel="shortcut icon" sizes="192x192" href="/favicon/192.png" />
     <link rel="icon" type="image/png" href="/favicon/16.png" sizes="16x16" />

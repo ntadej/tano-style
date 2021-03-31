@@ -14,7 +14,7 @@
     "lint-typescript": "tsc --noEmit --declaration",
     "prettier-check": "prettier --check . --loglevel warn",
     "prettier-fix": "prettier --write .",
-    "lint-fix": "run-s prettier-fix && lint-eslint-fix",
+    "lint-fix": "run-s prettier-fix lint-eslint-fix",
     "lint": "run-p lint-typescript prettier-check lint-eslint lint-sass",
     "dev": "next dev",
     "build": "next build",

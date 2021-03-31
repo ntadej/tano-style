@@ -5,8 +5,6 @@ export const config = {
   unstable_runtimeJS: false,
 }
 
-const ErrorPage: NextPage = () => (
-  <ErrorLayout title="403" text={'{{.Message}}'} />
-)
+const ErrorPage: NextPage = () => <ErrorLayout title="403" text={'{{.Message}}'} />
 
 export default ErrorPage
