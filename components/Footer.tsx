@@ -1,6 +1,10 @@
 import { FunctionComponent } from 'react'
 
-const Footer: FunctionComponent = ({ children }) => (
+type Props = {
+  extra: string
+}
+
+const Footer: FunctionComponent<Props> = ({ children, extra }) => (
   <footer className="footer">
     <div className="container">
       <nav className="level">
@@ -20,6 +24,7 @@ const Footer: FunctionComponent = ({ children }) => (
           <div className="level-item has-special-links">{children}</div>
         </div>
       </nav>
+      {extra && <div>{extra}</div>}
     </div>
   </footer>
 )
