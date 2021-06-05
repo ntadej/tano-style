@@ -8,6 +8,9 @@ body
 p
   margin-bottom: 0.8em
 
+  &.narrow
+    margin-bottom: 0 !important
+
 .is-primary
   color: $primary
 
@@ -50,12 +53,12 @@ p
       font-size: $size
       font-weight: $weight-light
 
-    @include mobile
-      font-size: nth($sizes-mobile, $i)
+      @include mobile
+        font-size: nth($sizes-mobile, $i)
 
-      #{$name} + #{$name},
-      #{$name} + #{$name-next}
-        padding-top: 0 !important
+        #{$name} + #{$name},
+        #{$name} + #{$name-next}
+          padding-top: 0 !important
 
 .content,
 .heading,
