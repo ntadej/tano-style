@@ -1,12 +1,14 @@
 {
   "name": "@tano/common",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Common infrastructure for tano.si webpages",
   "license": "MIT",
   "author": "Tadej Novak <tadej@tano.si>",
   "homepage": "https://github.com/ntadej/tano-style#readme",
-  "repository": "ntadej/tano-style",
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ntadej/tano-style.git"
+  },
   "scripts": {
     "lint-eslint": "eslint . --ext js,jsx,ts,tsx --max-warnings=0",
     "lint-eslint-fix": "eslint . --ext js,jsx,ts,tsx --fix --max-warnings=0",
