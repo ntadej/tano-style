@@ -1,0 +1,7 @@
+.next
+.vscode
+.eslintrc.json
+.prettierignore
+.prettierrc.json
+.stylelintrc.json
+legacy
