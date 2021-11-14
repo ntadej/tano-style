@@ -1,6 +1,6 @@
 {
-  "plugins": ["stylelint-scss"],
   "extends": "stylelint-config-sass-guidelines",
+  "customSyntax": "postcss-sass",
   "rules": {
     "block-opening-brace-space-before": null,
     "color-hex-case": "upper",
