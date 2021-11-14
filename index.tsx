@@ -1,4 +1,5 @@
 export { default as Link } from './components/Link'
+export { default as TopLevelLink } from './components/TopLevelLink'
 export { default as Footer } from './components/Footer'
 
 export { default as GitHubCorner } from './components/GitHubCorner'
