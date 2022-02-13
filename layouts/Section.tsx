@@ -9,8 +9,8 @@ const Section: FunctionComponent<Props> = ({ children, title, subtitle }) => (
   <section className="section">
     <div className="container">
       <div className="heading">
-        <h1>{title}</h1>
-        <h2 className="subtitle">{subtitle}</h2>
+        <h2>{title}</h2>
+        <h3 className="subtitle">{subtitle}</h3>
       </div>
       <div className="content">{children}</div>
     </div>

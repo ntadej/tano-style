@@ -14,15 +14,21 @@ p
 .is-primary
   color: $primary
 
-.heading
-  margin-bottom: 30px
-  text-align: center
-  text-transform: none
+section
+  .heading
+    margin-bottom: 30px
+    text-align: center
+    text-transform: none
 
-  .subtitle
-    font-size: $size-4
-    font-weight: $weight-light
-    margin-top: (-10px) !important
+    .title
+      font-variant: small-caps
+      font-weight: $weight-medium
+
+    .subtitle
+      font-size: $size-4
+      font-variant: normal
+      font-weight: $weight-normal
+      margin-top: (-10px) !important
 
 .footer
   font-size: 14px
@@ -51,7 +57,7 @@ p
     #{$name}
       @extend .title
       font-size: $size
-      font-weight: $weight-light
+      font-weight: $weight-normal
 
       @include mobile
         font-size: nth($sizes-mobile, $i)
@@ -65,7 +71,7 @@ p
 .hero
   .title
     color: $brand-secondary
-    font-weight: $weight-light
+    font-weight: $weight-medium
 
     &:not(:first-child)
       padding-top: 10px
@@ -75,6 +81,6 @@ p
 
   .subtitle
     color: $subtitle-color
-    font-weight: $weight-light
+    font-weight: $weight-normal
 
   @include heading
