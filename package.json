@@ -1,6 +1,6 @@
 {
   "name": "@ntadej/style",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Common infrastructure for tano.si webpages",
   "license": "MIT",
   "author": "Tadej Novak <tadej@tano.si>",

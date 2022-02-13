@@ -26,7 +26,7 @@ const ErrorLayout: FunctionComponent<Props> = ({
       {children}
     </div>
 
-    <div className="hero-foot">&copy; 2004-2021 Tadej Novak</div>
+    <div className="hero-foot">&copy; 2004-2022 Tadej Novak</div>
   </section>
 )
 

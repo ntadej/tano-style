@@ -12,9 +12,9 @@ const Footer: FunctionComponent<Props> = ({
   homeUrl,
   onlyCurrentYear,
 }) => {
-  let year = '2004-2021'
+  let year = '2004-2022'
   if (typeof onlyCurrentYear !== undefined && onlyCurrentYear) {
-    year = '2021'
+    year = '2022'
   }
   return (
     <footer className="footer">
