@@ -1,6 +1,7 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, ReactElement } from 'react'
 
 type Props = {
+  children: ReactElement
   title: string
   subtitle: string
 }

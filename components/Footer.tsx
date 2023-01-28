@@ -1,6 +1,7 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, ReactElement } from 'react'
 
 type Props = {
+  children?: ReactElement
   extra?: string
   homeUrl?: string
   onlyCurrentYear?: boolean
@@ -12,9 +13,9 @@ const Footer: FunctionComponent<Props> = ({
   homeUrl,
   onlyCurrentYear,
 }) => {
-  let year = '2004-2022'
+  let year = '2004-2023'
   if (typeof onlyCurrentYear !== undefined && onlyCurrentYear) {
-    year = '2022'
+    year = '2023'
   }
   return (
     <footer className="footer">

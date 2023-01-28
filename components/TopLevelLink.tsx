@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React, { Children, FunctionComponent, ReactElement } from 'react'
 
 type Props = {
+  children?: ReactElement
   href: string
   router: NextRouter
 }

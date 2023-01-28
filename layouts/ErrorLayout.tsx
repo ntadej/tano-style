@@ -1,7 +1,8 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, ReactElement } from 'react'
 import HeadSetup from './HeadSetup'
 
 type Props = {
+  children?: ReactElement
   title: string
   text: string
   siteTitle?: string
@@ -26,7 +27,7 @@ const ErrorLayout: FunctionComponent<Props> = ({
       {children}
     </div>
 
-    <div className="hero-foot">&copy; 2004-2022 Tadej Novak</div>
+    <div className="hero-foot">&copy; 2004-2023 Tadej Novak</div>
   </section>
 )
 
