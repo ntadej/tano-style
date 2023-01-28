@@ -1,9 +1,9 @@
 import { NextRouter, withRouter } from 'next/router'
 import Link from 'next/link'
-import React, { Children, FunctionComponent, ReactElement } from 'react'
+import React, { Children, FunctionComponent, ReactElement, ReactNode } from 'react'
 
 type Props = {
-  children?: ReactElement
+  children?: ReactNode
   href: string
   router: NextRouter
 }

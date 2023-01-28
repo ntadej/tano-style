@@ -1,8 +1,8 @@
-import { FunctionComponent, ReactElement } from 'react'
+import { FunctionComponent, ReactNode } from 'react'
 import Head from 'next/head'
 
 type Props = {
-  children?: ReactElement
+  children?: ReactNode
   title: string
   siteTitle: string
   siteColor: string

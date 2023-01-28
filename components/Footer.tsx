@@ -1,7 +1,7 @@
-import { FunctionComponent, ReactElement } from 'react'
+import { FunctionComponent, ReactNode } from 'react'
 
 type Props = {
-  children?: ReactElement
+  children?: ReactNode
   extra?: string
   homeUrl?: string
   onlyCurrentYear?: boolean

@@ -1,8 +1,8 @@
-import { FunctionComponent, ReactElement } from 'react'
+import { FunctionComponent, ReactNode } from 'react'
 import HeadSetup from './HeadSetup'
 
 type Props = {
-  children?: ReactElement
+  children?: ReactNode
   title: string
   text: string
   siteTitle?: string
