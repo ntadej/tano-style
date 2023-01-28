@@ -4,18 +4,14 @@ import Head from 'next/head'
 type Props = {
   children?: ReactNode
   title: string
-  siteTitle: string
-  siteColor: string
+  siteName: string
 }
 
-const Layout: FunctionComponent<Props> = ({
-  children,
-  title,
-  siteTitle,
-  siteColor,
-}) => (
+const siteColor = process.env.SITE_COLOR ? process.env.SITE_COLOR : '#DE2A4A'
+
+const Layout: FunctionComponent<Props> = ({ children, title, siteName }) => (
   <Head>
-    <title>{title ? title + ' - ' + siteTitle : siteTitle}</title>
+    <title>{title ? title + ' - ' + siteName : siteName}</title>
     <meta charSet="utf-8" />
     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />

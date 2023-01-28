@@ -5,19 +5,13 @@ type Props = {
   children?: ReactNode
   title: string
   text: string
-  siteTitle?: string
-  siteColor?: string
 }
 
-const ErrorLayout: FunctionComponent<Props> = ({
-  children,
-  title,
-  text,
-  siteTitle = 'Tano.si',
-  siteColor = '#DE2A4A',
-}) => (
+const siteName = process.env.SITE_NAME ? process.env.SITE_NAME : 'Tano.si'
+
+const ErrorLayout: FunctionComponent<Props> = ({ children, title, text }) => (
   <section className="hero hero-error is-fullheight">
-    <HeadSetup title={title} siteTitle={siteTitle} siteColor={siteColor} />
+    <HeadSetup title={title} siteName={siteName} />
 
     <div className="hero-body error">
       <h1 className="error-title">{title}</h1>
@@ -27,7 +21,7 @@ const ErrorLayout: FunctionComponent<Props> = ({
       {children}
     </div>
 
-    <div className="hero-foot">&copy; 2004-2023 Tadej Novak</div>
+    <div className="hero-foot">&copy; 2023 Tadej Novak</div>
   </section>
 )
 
