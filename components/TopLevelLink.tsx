@@ -16,7 +16,11 @@ const ActiveLink: FunctionComponent<Props> = ({ router, children, href }) => {
     className = `${className !== null ? className : ''} is-active`.trim()
   }
 
-  return <Link href={href}>{React.cloneElement(child, { className })}</Link>
+  return (
+    <Link href={href} legacyBehavior>
+      {React.cloneElement(child, { className })}
+    </Link>
+  )
 }
 
 export default withRouter(ActiveLink)
