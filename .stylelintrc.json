@@ -3,10 +3,9 @@
   "customSyntax": "postcss-sass",
   "rules": {
     "block-opening-brace-space-before": null,
-    "color-hex-case": "upper",
-    "declaration-block-trailing-semicolon": "never",
     "max-nesting-depth": null,
     "selector-max-compound-selectors": null,
-    "selector-no-qualifying-type": null
+    "selector-no-qualifying-type": null,
+    "scss/no-global-function-names": null
   }
 }
