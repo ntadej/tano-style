@@ -1,3 +1,4 @@
+export const output = 'export'
 export const reactStrictMode = true
 export const trailingSlash = false
 export const env = {

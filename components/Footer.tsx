@@ -1,18 +1,16 @@
-import { FunctionComponent, ReactNode } from 'react'
+import { ReactNode } from 'react'
 
-type Props = {
-  children?: ReactNode
-  extra?: string
-  homeUrl?: string
-  onlyCurrentYear?: boolean
-}
-
-const Footer: FunctionComponent<Props> = ({
+export default function Footer({
   children,
   extra,
   homeUrl,
   onlyCurrentYear,
-}) => {
+}: {
+  children?: ReactNode
+  extra?: string
+  homeUrl?: string
+  onlyCurrentYear?: boolean
+}) {
   let year = '2004-2023'
   if (typeof onlyCurrentYear !== undefined && onlyCurrentYear) {
     year = '2023'
@@ -42,5 +40,3 @@ const Footer: FunctionComponent<Props> = ({
     </footer>
   )
 }
-
-export default Footer

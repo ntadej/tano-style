@@ -1,18 +1,19 @@
-import { NextRouter, withRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import React, { Children, FunctionComponent, ReactElement, ReactNode } from 'react'
+import React, { Children, ReactElement, ReactNode } from 'react'
 
-type Props = {
+export default function ActiveLink({
+  children,
+  href,
+}: {
   children?: ReactNode
   href: string
-  router: NextRouter
-}
-
-const ActiveLink: FunctionComponent<Props> = ({ router, children, href }) => {
+}) {
+  const pathname = usePathname()
   const child: ReactElement = Children.only(children) as ReactElement
 
   let className = child.props.className || ''
-  if (router && router.pathname === href) {
+  if (pathname === href) {
     className = `${className !== null ? className : ''} is-active`.trim()
   }
 
@@ -22,5 +23,3 @@ const ActiveLink: FunctionComponent<Props> = ({ router, children, href }) => {
     </Link>
   )
 }
-
-export default withRouter(ActiveLink)
