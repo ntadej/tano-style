@@ -1,6 +1,6 @@
-import { usePathname } from 'next/navigation'
-import Link from 'next/link'
 import React, { Children, ReactElement, ReactNode } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export default function ActiveLink({
   children,

@@ -1,3 +1,4 @@
+/* eslint-disable sort-imports */
 import { Metadata } from 'next'
 import { ReactNode } from 'react'
 import { rootMetadata } from 'components/metadata'
