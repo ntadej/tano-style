@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss'
-import defaultTheme from 'tailwindcss/defaultTheme'
 import { rose } from 'tailwindcss/colors'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 export default {
   content: ['./app/**/*.{tsx,mdx}', './components/**/*.{tsx,mdx}'],

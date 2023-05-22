@@ -1,5 +1,3 @@
-import { FunctionComponent } from 'react'
-
 export default function GitHubCorner({ href }: { href: string }) {
   return (
     <a href={href} className="github-corner" target="_blank" rel="noreferrer">

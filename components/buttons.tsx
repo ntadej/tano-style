@@ -1,5 +1,4 @@
-import { ButtonHTMLAttributes } from 'react'
-import { ReactNode } from 'react'
+import { ButtonHTMLAttributes, ReactNode } from 'react'
 
 export function Button({
   children,

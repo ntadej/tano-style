@@ -1,7 +1,7 @@
 import { Button } from 'components/buttons'
 import { ErrorLayout } from 'components/layouts'
-import { Metadata } from 'next'
 import { siteName } from 'components/metadata'
+import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: `401 - ${siteName}`,

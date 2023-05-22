@@ -1,5 +1,6 @@
 'use client'
 
+import { Disclosure, Menu, Transition } from '@headlessui/react'
 import {
   Bars3Icon,
   ComputerDesktopIcon,
@@ -7,13 +8,11 @@ import {
   SunIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Fragment, ReactNode } from 'react'
-import { MouseEventHandler, useEffect, useState } from 'react'
-import Link from 'next/link'
-import { classNames } from '../utils'
-import { usePathname } from 'next/navigation'
 import { useTheme } from 'next-themes'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { Fragment, MouseEventHandler, ReactNode, useEffect, useState } from 'react'
+import { classNames } from '../utils'
 
 type NavigationItem = {
   name: string

@@ -1,5 +1,5 @@
-import { Providers } from './providers'
 import { ReactNode } from 'react'
+import { Providers } from './providers'
 
 export function RootLayout({ children }: { children: ReactNode }) {
   return (
