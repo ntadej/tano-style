@@ -1,6 +1,17 @@
+import { Providers } from './providers'
 import { ReactNode } from 'react'
 
-export default function ErrorLayout({
+export function RootLayout({ children }: { children: ReactNode }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-white text-gray-700 dark:bg-zinc-800 dark:text-gray-300">
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  )
+}
+
+export function ErrorLayout({
   children,
   title,
   text,

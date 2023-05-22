@@ -1,4 +1,4 @@
-import ErrorLayout from 'app/error-layout'
+import { ErrorLayout } from 'components/layouts'
 import { Metadata } from 'next'
 import { siteName } from 'components/metadata'
 
