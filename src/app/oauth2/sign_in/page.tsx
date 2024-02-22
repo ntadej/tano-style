@@ -1,6 +1,6 @@
-import { Button } from 'components/buttons'
-import { ErrorLayout } from 'components/layouts'
-import { siteName } from 'components/metadata'
+import { Button } from '@/components/buttons'
+import { ErrorLayout } from '@/components/layouts'
+import { siteName } from '@/components/metadata'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {

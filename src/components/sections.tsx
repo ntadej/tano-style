@@ -40,7 +40,7 @@ export function Content({
         fullWidth ? 'max-w-none' : '',
         'prose-headings:mb-1 prose-headings:text-primary-700 dark:prose-headings:text-primary-300',
         'prose-a:text-primary-700 prose-a:underline prose-a:transition-all prose-a:duration-300',
-        'hover:prose-a:decoration-primary-300 dark:prose-a:text-primary-300 dark:hover:prose-a:decoration-primary-700'
+        'hover:prose-a:decoration-primary-300 dark:prose-a:text-primary-300 dark:hover:prose-a:decoration-primary-700',
       )}
     >
       {children}

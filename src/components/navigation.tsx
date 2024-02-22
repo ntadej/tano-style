@@ -51,7 +51,7 @@ export function MenuItem({
               ? 'text-primary-700 dark:text-primary-300'
               : 'text-zinc-500 dark:text-zinc-300',
             'hover:cursor-pointer',
-            'flex items-center p-2 text-sm'
+            'flex items-center p-2 text-sm',
           )}
           onClick={action}
         >
@@ -133,7 +133,7 @@ export function NavigationElement({
       ? 'text-primary-700 dark:text-primary-300'
       : 'text-zinc-500 hover:text-primary-700 hover:bg-gray-100 dark:text-zinc-300 dark:hover:text-primary-300 dark:hover:bg-zinc-700',
     list ? 'block' : '',
-    'rounded-md px-3 py-2 font-medium transition-colors duration-300 text-base'
+    'rounded-md px-3 py-2 font-medium transition-colors duration-300 text-base',
   )
 
   return list ? (

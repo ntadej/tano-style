@@ -5,7 +5,6 @@ export const siteColor = process.env.SITE_COLOR ? process.env.SITE_COLOR : '#DE2
 
 export const rootMetadata: Metadata = {
   title: siteName,
-  themeColor: siteColor,
   manifest: '/manifest.json',
   icons: [
     {

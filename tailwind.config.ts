@@ -4,7 +4,7 @@ import { rose } from 'tailwindcss/colors'
 import defaultTheme from 'tailwindcss/defaultTheme'
 
 export default {
-  content: ['./app/**/*.{tsx,mdx}', './components/**/*.{tsx,mdx}'],
+  content: ['./src/app/**/*.{tsx,mdx}', './src/components/**/*.{tsx,mdx}'],
   theme: {
     extend: {
       colors: {

@@ -1,4 +1,4 @@
-import { ErrorLayout } from 'components/layouts'
+import { ErrorLayout } from '@/components/layouts'
 
 export default function NotFound() {
   return (
