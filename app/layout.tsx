@@ -1,4 +1,3 @@
-/* eslint-disable sort-imports */
 import { RootLayout } from 'components/layouts'
 import { rootMetadata } from 'components/metadata'
 import { Metadata } from 'next'

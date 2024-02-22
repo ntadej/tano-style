@@ -21,7 +21,7 @@ type NavigationItem = {
 
 export function HamburgerButton({ open }: { open: boolean }) {
   return (
-    <Disclosure.Button className="dark:hover:text-primarty-300 inline-flex items-center justify-center rounded-md p-2 text-gray-500 transition-colors duration-300 hover:bg-gray-100 hover:text-primary-700 focus:outline-none focus:ring-1 focus:ring-primary-300 dark:text-gray-300 dark:hover:bg-zinc-700 dark:hover:text-primary-300">
+    <Disclosure.Button className="dark:hover:text-primarty-300 inline-flex items-center justify-center rounded-md p-2 text-zinc-500 transition-colors duration-300 hover:bg-gray-100 hover:text-primary-700 focus:outline-none focus:ring-1 focus:ring-primary-300 dark:text-zinc-300 dark:hover:bg-zinc-700 dark:hover:text-primary-300">
       <span className="sr-only">Open main menu</span>
       {open ? (
         <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
@@ -49,7 +49,7 @@ export function MenuItem({
             active ? 'bg-gray-100 dark:bg-zinc-700' : '',
             current
               ? 'text-primary-700 dark:text-primary-300'
-              : 'text-gray-500 dark:text-gray-300',
+              : 'text-zinc-500 dark:text-zinc-300',
             'hover:cursor-pointer',
             'flex items-center p-2 text-sm'
           )}
@@ -77,7 +77,7 @@ export function ThemeMenu() {
 
   return (
     <Menu as="div" className="relative ml-3">
-      <Menu.Button className="flex rounded-md p-2 text-sm text-gray-500 transition-colors duration-300 hover:bg-gray-100 hover:text-primary-700 focus:outline-none focus:ring-1 focus:ring-primary-300 dark:text-gray-300 dark:hover:bg-zinc-700 dark:hover:text-primary-300">
+      <Menu.Button className="flex rounded-md p-2 text-zinc-500 transition-colors duration-300 hover:bg-gray-100 hover:text-primary-700 focus:outline-none focus:ring-1 focus:ring-primary-300 dark:text-zinc-300 dark:hover:bg-zinc-700 dark:hover:text-primary-300">
         <span className="sr-only">Select theme</span>
         {resolvedTheme == 'dark' ? (
           <MoonIcon className="block h-6 w-6" aria-hidden="true" />
@@ -131,9 +131,9 @@ export function NavigationElement({
   const classes: string = classNames(
     current
       ? 'text-primary-700 dark:text-primary-300'
-      : 'text-gray-500 hover:text-primary-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-primary-300 dark:hover:bg-zinc-700',
-    list ? 'block text-base' : 'text-sm',
-    'rounded-md px-3 py-2 font-medium transition-colors duration-300 text-smallcaps'
+      : 'text-zinc-500 hover:text-primary-700 hover:bg-gray-100 dark:text-zinc-300 dark:hover:text-primary-300 dark:hover:bg-zinc-700',
+    list ? 'block' : '',
+    'rounded-md px-3 py-2 font-medium transition-colors duration-300 text-base'
   )
 
   return list ? (
@@ -162,7 +162,7 @@ export function Navigation({ items }: { items: NavigationItem[] }) {
     >
       {({ open }) => (
         <>
-          <div className="container mx-auto px-2">
+          <div className="container mx-auto px-3 sm:px-4">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 <HamburgerButton open={open} />

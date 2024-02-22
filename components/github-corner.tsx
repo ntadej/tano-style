@@ -1,4 +1,4 @@
-export default function GitHubCorner({ href }: { href: string }) {
+export function GitHubCorner({ href }: { href: string }) {
   return (
     <a href={href} className="github-corner" target="_blank" rel="noreferrer">
       <svg width="80" height="80" viewBox="0 0 250 250">
