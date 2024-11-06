@@ -1,6 +1,15 @@
 'use client'
 
-import { Disclosure, Menu, Transition } from '@headlessui/react'
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+  Transition,
+} from '@headlessui/react'
 import {
   Bars3Icon,
   ComputerDesktopIcon,
@@ -19,20 +28,20 @@ type NavigationItem = {
   href: string
 }
 
-export function HamburgerButton({ open }: { open: boolean }) {
+export function NavHamburgerButton({ open }: { open: boolean }) {
   return (
-    <Disclosure.Button className="dark:hover:text-primarty-300 inline-flex items-center justify-center rounded-md p-2 text-zinc-500 transition-colors duration-300 hover:bg-gray-100 hover:text-primary-700 focus:outline-none focus:ring-1 focus:ring-primary-300 dark:text-zinc-300 dark:hover:bg-zinc-700 dark:hover:text-primary-300">
+    <DisclosureButton className="dark:hover:text-primarty-300 inline-flex items-center justify-center rounded-md p-2 text-zinc-500 transition-colors duration-300 hover:bg-gray-100 hover:text-brand-light focus:outline-none focus:ring-1 focus:ring-brand-dark dark:text-zinc-300 dark:hover:bg-zinc-700 dark:hover:text-brand-dark">
       <span className="sr-only">Open main menu</span>
       {open ? (
         <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
       ) : (
         <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
       )}
-    </Disclosure.Button>
+    </DisclosureButton>
   )
 }
 
-export function MenuItem({
+export function NavMenuItem({
   children,
   current,
   action,
@@ -42,23 +51,21 @@ export function MenuItem({
   action?: MouseEventHandler
 }) {
   return (
-    <Menu.Item as="li">
-      {({ active }) => (
-        <span
-          className={classNames(
-            active ? 'bg-gray-100 dark:bg-zinc-700' : '',
-            current
-              ? 'text-primary-700 dark:text-primary-300'
-              : 'text-zinc-500 dark:text-zinc-300',
-            'hover:cursor-pointer',
-            'flex items-center p-2 text-sm',
-          )}
-          onClick={action}
-        >
-          {children}
-        </span>
-      )}
-    </Menu.Item>
+    <MenuItem as="li">
+      <span
+        className={classNames(
+          current
+            ? 'text-brand-light dark:text-brand-dark'
+            : 'text-zinc-500 dark:text-zinc-300',
+          'hover:cursor-pointer',
+          'active:bg-gray-100 active:dark:bg-zinc-700',
+          'flex items-center p-2 text-sm',
+        )}
+        onClick={action}
+      >
+        {children}
+      </span>
+    </MenuItem>
   )
 }
 
@@ -77,14 +84,14 @@ export function ThemeMenu() {
 
   return (
     <Menu as="div" className="relative ml-3">
-      <Menu.Button className="flex rounded-md p-2 text-zinc-500 transition-colors duration-300 hover:bg-gray-100 hover:text-primary-700 focus:outline-none focus:ring-1 focus:ring-primary-300 dark:text-zinc-300 dark:hover:bg-zinc-700 dark:hover:text-primary-300">
+      <MenuButton className="flex rounded-md p-2 text-zinc-500 transition-colors duration-300 hover:bg-gray-100 hover:text-brand-light focus:outline-none focus:ring-1 focus:ring-brand-dark dark:text-zinc-300 dark:hover:bg-zinc-700 dark:hover:text-brand-dark">
         <span className="sr-only">Select theme</span>
         {resolvedTheme == 'dark' ? (
           <MoonIcon className="block h-6 w-6" aria-hidden="true" />
         ) : (
           <SunIcon className="block h-6 w-6" aria-hidden="true" />
         )}
-      </Menu.Button>
+      </MenuButton>
       <Transition
         as={Fragment}
         enter="transition ease-out duration-100"
@@ -94,23 +101,23 @@ export function ThemeMenu() {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items
+        <MenuItems
           as="ul"
           className="absolute right-0 z-10 mt-2 w-36 origin-top-right rounded-md bg-white py-1 shadow-lg shadow-zinc-800/5 ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-zinc-800 dark:shadow-zinc-200/5 dark:ring-zinc-200 dark:ring-opacity-5"
         >
-          <MenuItem current={theme == 'light'} action={() => setTheme('light')}>
+          <NavMenuItem current={theme == 'light'} action={() => setTheme('light')}>
             <SunIcon className="mr-2 block h-6 w-6" aria-hidden="true" />
             Light
-          </MenuItem>
-          <MenuItem current={theme == 'dark'} action={() => setTheme('dark')}>
+          </NavMenuItem>
+          <NavMenuItem current={theme == 'dark'} action={() => setTheme('dark')}>
             <MoonIcon className="mr-2 block h-6 w-6" aria-hidden="true" />
             Dark
-          </MenuItem>
-          <MenuItem current={theme == 'system'} action={() => setTheme('system')}>
+          </NavMenuItem>
+          <NavMenuItem current={theme == 'system'} action={() => setTheme('system')}>
             <ComputerDesktopIcon className="mr-2 block h-6 w-6" aria-hidden="true" />
             System
-          </MenuItem>
-        </Menu.Items>
+          </NavMenuItem>
+        </MenuItems>
       </Transition>
     </Menu>
   )
@@ -130,21 +137,21 @@ export function NavigationElement({
   const ariaCurrent = current ? 'page' : undefined
   const classes: string = classNames(
     current
-      ? 'text-primary-700 dark:text-primary-300'
-      : 'text-zinc-500 hover:text-primary-700 hover:bg-gray-100 dark:text-zinc-300 dark:hover:text-primary-300 dark:hover:bg-zinc-700',
+      ? 'text-brand-light dark:text-brand-dark'
+      : 'text-zinc-500 hover:text-brand-light hover:bg-gray-100 dark:text-zinc-300 dark:hover:text-brand-dark dark:hover:bg-zinc-700',
     list ? 'block' : '',
     'rounded-md px-3 py-2 font-medium transition-colors duration-300 text-base',
   )
 
   return list ? (
-    <Disclosure.Button
+    <DisclosureButton
       as={Link}
       href={href}
       className={classes}
       aria-current={ariaCurrent}
     >
       {name}
-    </Disclosure.Button>
+    </DisclosureButton>
   ) : (
     <Link href={href} className={classes} aria-current={ariaCurrent}>
       {name}
@@ -165,7 +172,7 @@ export function Navigation({ items }: { items: NavigationItem[] }) {
           <div className="container mx-auto px-3 sm:px-4">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                <HamburgerButton open={open} />
+                <NavHamburgerButton open={open} />
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
@@ -192,7 +199,6 @@ export function Navigation({ items }: { items: NavigationItem[] }) {
 
           <Transition
             show={open}
-            className="overflow-hidden"
             enter="transition transition-[max-height] duration-300 ease-in"
             enterFrom="transform max-h-0"
             enterTo="transform max-h-screen"
@@ -200,7 +206,7 @@ export function Navigation({ items }: { items: NavigationItem[] }) {
             leaveFrom="transform max-h-screen"
             leaveTo="transform max-h-0"
           >
-            <Disclosure.Panel className="sm:hidden" static>
+            <DisclosurePanel className="sm:hidden overflow-hidden" static>
               <div className="space-y-1 px-2 pb-3 pt-2">
                 {items.map((item) => (
                   <NavigationElement
@@ -213,7 +219,7 @@ export function Navigation({ items }: { items: NavigationItem[] }) {
                   />
                 ))}
               </div>
-            </Disclosure.Panel>
+            </DisclosurePanel>
           </Transition>
         </>
       )}

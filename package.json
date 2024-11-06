@@ -17,19 +17,19 @@
     "prettier-fix": "prettier --write .",
     "lint-fix": "run-s prettier-fix lint-eslint-fix",
     "lint": "run-p lint-typescript prettier-check lint-eslint",
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build"
   },
   "pre-commit": [
     "lint"
   ],
   "dependencies": {
-    "@fontsource/inter": "^4",
-    "@headlessui/react": "^1",
+    "@fontsource-variable/inter": "^5",
+    "@headlessui/react": "^2",
     "@heroicons/react": "^2",
-    "@icons-pack/react-simple-icons": "^7",
-    "next": "~14.1",
-    "next-themes": "^0.2",
+    "@icons-pack/react-simple-icons": "^10",
+    "next": "~15.0.2",
+    "next-themes": "^0.4",
     "react": "^18",
     "react-dom": "^18"
   },
@@ -38,15 +38,15 @@
     "@types/node": "^18",
     "@types/react": "^18",
     "autoprefixer": "^10",
-    "eslint": "^8",
-    "eslint-config-next": "~14.1",
+    "eslint": "^9",
+    "eslint-config-next": "~15.0.2",
     "npm-run-all": "~4.1",
     "postcss": "^8",
     "pre-commit": "^1",
-    "prettier": "3.2.5",
-    "prettier-plugin-organize-imports": "^3",
-    "prettier-plugin-tailwindcss": "~0.5",
-    "tailwindcss": "~3.3",
+    "prettier": "3.3.2",
+    "prettier-plugin-organize-imports": "^4",
+    "prettier-plugin-tailwindcss": "~0.6",
+    "tailwindcss": "~3.4",
     "typescript": "^5"
   }
 }

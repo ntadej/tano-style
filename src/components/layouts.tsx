@@ -24,7 +24,7 @@ export function ErrorLayout({
     <>
       <section className="container mx-auto flex flex-grow items-center px-6 py-12">
         <div className="mx-auto flex flex-col items-center text-center sm:flex-row">
-          <h1 className="px-6 py-2 text-4xl text-primary-700 dark:text-primary-300 sm:border-r-2 sm:border-r-primary-300 sm:dark:border-r-primary-700">
+          <h1 className="px-6 py-2 text-4xl text-brand-light dark:text-brand-dark sm:border-r-2 sm:border-r-brand-dark sm:dark:border-r-brand-light">
             {title}
           </h1>
           <h2 className="px-6 text-zinc-600 dark:text-zinc-300">{text}</h2>
