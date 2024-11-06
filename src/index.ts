@@ -1,7 +1,0 @@
-export { Button } from '@/components/buttons'
-export { Footer, FooterLink } from '@/components/footer'
-export { GitHubCorner } from '@/components/github-corner'
-export { ErrorLayout, RootLayout } from '@/components/layouts'
-export { rootMetadata, siteColor, siteName } from '@/components/metadata'
-export { Navigation } from '@/components/navigation'
-export { Content, Section } from '@/components/sections'
