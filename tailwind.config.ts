@@ -1,6 +1,6 @@
 import typography from '@tailwindcss/typography'
 import type { Config } from 'tailwindcss'
-import { rose } from 'tailwindcss/colors'
+import { rose, zinc } from 'tailwindcss/colors'
 import defaultTheme from 'tailwindcss/defaultTheme'
 
 export default {
@@ -12,6 +12,10 @@ export default {
         brand: {
           light: rose[700],
           dark: rose[400],
+        },
+        prose: {
+          light: zinc[800],
+          dark: zinc[200],
         },
       },
       fontFamily: {

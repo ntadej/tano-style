@@ -58,7 +58,7 @@ export function NavMenuItem({
             ? 'text-brand-light dark:text-brand-dark'
             : 'text-zinc-500 dark:text-zinc-300',
           'hover:cursor-pointer',
-          'active:bg-gray-100 active:dark:bg-zinc-700',
+          'active:bg-gray-100 active:dark:bg-zinc-800',
           'flex items-center p-2 text-sm',
         )}
         onClick={action}
@@ -84,7 +84,7 @@ export function ThemeMenu() {
 
   return (
     <Menu as="div" className="relative ml-3">
-      <MenuButton className="flex rounded-md p-2 text-zinc-500 transition-colors duration-300 hover:bg-gray-100 hover:text-brand-light focus:outline-none focus:ring-1 focus:ring-brand-dark dark:text-zinc-300 dark:hover:bg-zinc-700 dark:hover:text-brand-dark">
+      <MenuButton className="flex rounded-md p-2 text-zinc-500 transition-colors duration-300 hover:bg-gray-100 hover:text-brand-light focus:outline-none focus:ring-1 focus:ring-brand-dark dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-brand-dark">
         <span className="sr-only">Select theme</span>
         {resolvedTheme == 'dark' ? (
           <MoonIcon className="block h-6 w-6" aria-hidden="true" />
@@ -103,7 +103,7 @@ export function ThemeMenu() {
       >
         <MenuItems
           as="ul"
-          className="absolute right-0 z-10 mt-2 w-36 origin-top-right rounded-md bg-white py-1 shadow-lg shadow-zinc-800/5 ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-zinc-800 dark:shadow-zinc-200/5 dark:ring-zinc-200 dark:ring-opacity-5"
+          className="absolute right-0 z-10 mt-2 w-36 origin-top-right rounded-md bg-white py-1 shadow-lg shadow-zinc-900/5 ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-zinc-900 dark:shadow-zinc-200/5 dark:ring-zinc-200 dark:ring-opacity-5"
         >
           <NavMenuItem current={theme == 'light'} action={() => setTheme('light')}>
             <SunIcon className="mr-2 block h-6 w-6" aria-hidden="true" />
@@ -138,9 +138,9 @@ export function NavigationElement({
   const classes: string = classNames(
     current
       ? 'text-brand-light dark:text-brand-dark'
-      : 'text-zinc-500 hover:text-brand-light hover:bg-gray-100 dark:text-zinc-300 dark:hover:text-brand-dark dark:hover:bg-zinc-700',
+      : 'text-zinc-500 hover:text-brand-light hover:bg-gray-100 dark:text-zinc-300 dark:hover:text-brand-dark dark:hover:bg-zinc-800',
     list ? 'block' : '',
-    'rounded-md px-3 py-2 font-medium transition-colors duration-300 text-base',
+    'rounded-md px-3 py-2 font-medium transition-colors duration-200 text-base',
   )
 
   return list ? (
@@ -163,10 +163,7 @@ export function Navigation({ items }: { items: NavigationItem[] }) {
   const pathname = usePathname()
 
   return (
-    <Disclosure
-      as="nav"
-      className="sticky top-0 z-10 bg-white/90 shadow shadow-zinc-800/10 backdrop-blur backdrop-filter dark:bg-zinc-800/90 dark:shadow-zinc-200/5"
-    >
+    <Disclosure as="nav" className="sticky top-0 z-10">
       {({ open }) => (
         <>
           <div className="container mx-auto px-3 sm:px-4">

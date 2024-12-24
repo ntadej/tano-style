@@ -47,14 +47,12 @@ export function Footer({
   homeUrl?: string
   onlyCurrentYear?: boolean
 }) {
-  let year = '2004-2023'
+  let year = '2004-2025'
   if (typeof onlyCurrentYear !== undefined && onlyCurrentYear) {
-    year = '2023'
+    year = '2025'
   }
   return (
     <footer className="mt-auto">
-      <hr className="mb-2 mt-10 border-zinc-200 dark:border-zinc-600" />
-
       <div className="container mx-auto mb-2 p-4">
         <div className="flex flex-col items-center sm:flex-row sm:justify-between">
           <p className="text-sm text-zinc-500 dark:text-zinc-400">
