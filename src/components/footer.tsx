@@ -13,7 +13,7 @@ export function FooterLink({
   rel?: string
   attribution?: boolean
 }) {
-  let extraProperties: { [key: string]: string } = {}
+  const extraProperties: { [key: string]: string } = {}
   if (target) {
     extraProperties['target'] = target
   }

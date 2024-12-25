@@ -52,7 +52,6 @@ export const rootMetadata: Metadata = {
     {
       url: '/favicon/apple.svg',
       rel: 'mask-icon',
-      // @ts-ignore
       color: siteColor,
     },
   ],
