@@ -3,7 +3,6 @@ import { rootMetadata } from '@/components/metadata'
 import { rootViewport } from '@/components/viewport'
 import { Metadata, Viewport } from 'next'
 
-import '@fontsource-variable/inter'
 import '@/_index.css'
 
 export default RootLayout

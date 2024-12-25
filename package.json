@@ -1,6 +1,6 @@
 {
   "name": "@ntadej/style",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Common infrastructure for tano.si webpages",
   "license": "MIT",
   "author": "Tadej Novak <tadej@tano.si>",
@@ -24,29 +24,28 @@
     "lint"
   ],
   "dependencies": {
-    "@fontsource-variable/inter": "^5",
-    "@headlessui/react": "^2",
-    "@heroicons/react": "^2",
-    "@icons-pack/react-simple-icons": "^10",
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.2.0",
     "next": "~15.1.2",
-    "next-themes": "^0.4",
-    "react": "^19",
-    "react-dom": "^19"
+    "next-themes": "^0.4.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5",
-    "@types/node": "^22",
-    "@types/react": "^19",
-    "autoprefixer": "^10",
-    "eslint": "^9",
+    "@tailwindcss/typography": "^0.5.15",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.17.0",
     "eslint-config-next": "~15.1.2",
-    "npm-run-all": "~4.1",
-    "postcss": "^8",
-    "pre-commit": "^1",
+    "npm-run-all": "~4.1.5",
+    "postcss": "^8.4.49",
+    "pre-commit": "^1.2.2",
     "prettier": "3.4.2",
-    "prettier-plugin-organize-imports": "^4",
-    "prettier-plugin-tailwindcss": "~0.6",
-    "tailwindcss": "~3.4",
-    "typescript": "^5"
-  }
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "prettier-plugin-tailwindcss": "~0.6.9",
+    "tailwindcss": "~3.4.17",
+    "typescript": "^5.7.2"
+  },
+  "packageManager": "pnpm@9.15.1+sha512.1acb565e6193efbebda772702950469150cf12bcc764262e7587e71d19dc98a423dff9536e57ea44c49bdf790ff694e83c27be5faa23d67e0c033b583be4bfcf"
 }

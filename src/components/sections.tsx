@@ -13,7 +13,7 @@ export function Section({
   return (
     <section className="section">
       <div className="container mx-auto mt-2 p-4">
-        <h1 className="text-2xl font-semibold text-brand-light dark:text-brand-dark sm:text-3xl">
+        <h1 className="text-2xl font-semibold text-brand-light sm:text-3xl dark:text-brand-dark">
           {title}
         </h1>
         <h2 className="mb-4 mt-1 max-w-lg text-zinc-500 dark:text-zinc-400">

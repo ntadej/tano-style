@@ -203,7 +203,7 @@ export function Navigation({ items }: { items: NavigationItem[] }) {
             leaveFrom="transform max-h-screen"
             leaveTo="transform max-h-0"
           >
-            <DisclosurePanel className="sm:hidden overflow-hidden" static>
+            <DisclosurePanel className="overflow-hidden sm:hidden" static>
               <div className="space-y-1 px-2 pb-3 pt-2">
                 {items.map((item) => (
                   <NavigationElement

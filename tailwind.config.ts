@@ -19,7 +19,7 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter Variable', ...defaultTheme.fontFamily.sans],
+        sans: ['var(--font-ibm-plex-sans)', ...defaultTheme.fontFamily.sans],
       },
     },
   },
