@@ -14,7 +14,7 @@ export function Button({
       type={type}
       className={classNames(
         'transform rounded-lg px-6 py-3 text-lg font-medium tracking-wide',
-        'bg-primary-700 text-zinc-50 hover:bg-primary-600 hover:text-zinc-100',
+        'hover:brand-primary bg-brand-secondary text-zinc-50 hover:text-zinc-100',
         'transition-colors duration-300',
       )}
     >

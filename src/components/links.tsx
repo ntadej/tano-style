@@ -1,4 +1,5 @@
-import { ReactNode } from 'react'
+import { ReactNode, createElement } from 'react'
+import { IconType } from 'react-icons'
 import { classNames } from '../utils'
 
 export function StyledLink({
@@ -35,5 +36,31 @@ export function StyledLink({
     <a href={href} className={classNames(...className)} {...extraProperties}>
       {children}
     </a>
+  )
+}
+
+export function SocialLink({
+  name,
+  href,
+  icon,
+}: {
+  name: string
+  href: string
+  icon: IconType
+}) {
+  const iconElement = createElement(icon, { size: 24, title: name })
+  return (
+    <StyledLink
+      className={[
+        'group -m-1 p-1',
+        'text-zinc-800 hover:text-brand-primary dark:text-zinc-300 dark:hover:text-brand-primary',
+        'transition-colors duration-300',
+      ]}
+      aria-label={name}
+      href={href}
+      target="_blank"
+    >
+      {iconElement}
+    </StyledLink>
   )
 }

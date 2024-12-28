@@ -29,7 +29,7 @@ export function ErrorLayout({
     <>
       <section className="container mx-auto flex flex-grow items-center px-6 py-12">
         <div className="mx-auto flex flex-col items-center text-center sm:flex-row">
-          <h1 className="px-6 py-2 font-mono text-4xl text-brand-light sm:border-r-2 sm:border-r-brand-dark dark:text-brand-dark sm:dark:border-r-brand-light">
+          <h1 className="px-6 py-2 font-mono text-4xl text-brand-primary sm:border-r-2 sm:border-r-brand-secondary">
             {title}
           </h1>
           <h2 className="px-6 text-zinc-700 dark:text-zinc-300">{text}</h2>

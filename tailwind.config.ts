@@ -10,8 +10,8 @@ export default {
       colors: {
         primary: rose,
         brand: {
-          light: rose[700],
-          dark: rose[400],
+          primary: rose[600],
+          secondary: rose[800],
         },
         prose: {
           light: zinc[700],

@@ -26,7 +26,7 @@ export function Link({
         'font-medium text-zinc-900 dark:text-zinc-200',
         'underline',
         'transition-all duration-300',
-        'decoration-brand-light decoration-from-font hover:decoration-2',
+        'decoration-brand-primary decoration-from-font hover:decoration-2',
       ]}
     >
       {children}
@@ -75,7 +75,7 @@ export function Content({
         'prose-headings:text-zinc-800 dark:prose-headings:text-zinc-100',
         'prose-a:underline prose-a:transition-all prose-a:duration-300',
         'prose-a:dark:text-zinc-200',
-        'prose-a:decoration-brand-light prose-a:decoration-from-font',
+        'prose-a:decoration-brand-primary prose-a:decoration-from-font',
         'hover:prose-a:decoration-2',
       )}
     >

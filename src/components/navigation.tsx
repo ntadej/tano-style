@@ -1,5 +1,4 @@
 'use client'
-
 import {
   Disclosure,
   DisclosureButton,
@@ -58,7 +57,7 @@ export function NavDropdownItem({
         className={classNames(
           'flex items-center p-2 text-sm',
           current
-            ? 'text-brand-light'
+            ? 'text-brand-primary'
             : 'text-zinc-500 hover:cursor-pointer hover:bg-gray-200 hover:text-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800 hover:dark:text-zinc-100',
           'transition-colors duration-300',
         )}
@@ -148,7 +147,7 @@ export function NavigationElement({
   const ariaCurrent = current ? 'page' : undefined
   const className: string = classNames(
     current
-      ? 'text-brand-light'
+      ? 'text-brand-primary'
       : 'text-zinc-500 hover:text-zinc-700 dark:text-zinc-300 hover:dark:text-zinc-100 hover:bg-gray-100 dark:hover:bg-zinc-900',
     list ? 'block' : '',
     'rounded-md px-3 py-2 font-medium text-base',

@@ -13,7 +13,7 @@ export default function Page() {
       <form
         method="GET"
         action="{{.ProxyPrefix}}/start"
-        className="flex-shrink-0 px-6 py-6 sm:border-l-2 sm:border-l-brand-dark sm:py-2 sm:dark:border-l-brand-light"
+        className="flex-shrink-0 px-6 py-6 sm:border-l-2 sm:border-l-brand-primary sm:py-2"
       >
         <input type="hidden" name="rd" value="{{.Redirect}}" />
         <Button type="submit">Sign in</Button>
