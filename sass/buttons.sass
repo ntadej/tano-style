@@ -1,9 +1,0 @@
-a:not(.button)
-  @include hover-animation
-
-.button
-  @include hover-animation
-
-  span:not(.icon) + .icon
-    +ltr-property("margin", $button-padding-horizontal * 0.25, false)
-    +ltr-property("margin", calc(#{-0.5 * $button-padding-horizontal} - #{$button-border-width}))

@@ -1,5 +1,4 @@
 {
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "stylelint.validate": ["sass"]
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
