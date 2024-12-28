@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { StyledLink } from './links'
 
 export function FooterLink({
   children,
@@ -13,26 +14,19 @@ export function FooterLink({
   rel?: string
   attribution?: boolean
 }) {
-  const extraProperties: { [key: string]: string } = {}
-  if (target) {
-    extraProperties['target'] = target
-  }
-  if (rel) {
-    extraProperties['rel'] = rel
-  }
-  if (attribution) {
-    extraProperties['property'] = 'cc:attributionName'
-    extraProperties['rel'] = 'cc:attributionURL'
-  }
-
   return (
-    <a
+    <StyledLink
       href={href}
-      className="mx-2 text-sm text-zinc-500 transition-colors duration-300 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300"
-      {...extraProperties}
+      target={target}
+      rel={rel}
+      attribution={attribution}
+      className={[
+        'mx-2 text-sm text-zinc-500 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300',
+        'transition-colors duration-300',
+      ]}
     >
       {children}
-    </a>
+    </StyledLink>
   )
 }
 
@@ -53,9 +47,9 @@ export function Footer({
   }
   return (
     <footer className="mt-auto">
-      <div className="container mx-auto mb-2 p-4">
+      <div className="container mx-auto mb-2 mt-2 p-4 sm:mt-8">
         <div className="flex flex-col items-center sm:flex-row sm:justify-between">
-          <p className="text-sm text-zinc-500 dark:text-zinc-400">
+          <p className="text-xs text-zinc-500 sm:text-sm dark:text-zinc-400">
             &copy; {year}{' '}
             <FooterLink href={homeUrl ? homeUrl : 'https://tano.si'} attribution={true}>
               Tadej Novak

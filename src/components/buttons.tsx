@@ -1,4 +1,6 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react'
+import { classNames } from '../utils'
+import { StyledLink } from './links'
 
 export function Button({
   children,
@@ -10,9 +12,40 @@ export function Button({
   return (
     <button
       type={type}
-      className="transform rounded-lg bg-primary-600 px-6 py-2 font-medium capitalize tracking-wide text-zinc-50 transition-colors duration-300 hover:bg-primary-700 hover:text-zinc-100 focus:outline-none focus:ring focus:ring-primary-400 focus:ring-opacity-80"
+      className={classNames(
+        'transform rounded-lg px-6 py-3 text-lg font-medium tracking-wide',
+        'bg-primary-700 text-zinc-50 hover:bg-primary-600 hover:text-zinc-100',
+        'transition-colors duration-300',
+      )}
     >
       {children}
     </button>
+  )
+}
+
+export function ButtonLink({
+  children,
+  href,
+  target,
+  rel,
+}: {
+  children: ReactNode
+  href: string
+  target?: string
+  rel?: string
+}) {
+  return (
+    <StyledLink
+      href={href}
+      target={target}
+      rel={rel}
+      className={[
+        'transform rounded-lg px-6 py-3 text-lg font-medium tracking-wide',
+        'bg-primary-700 text-zinc-50 hover:bg-primary-600 hover:text-zinc-100',
+        'transition-colors duration-300',
+      ]}
+    >
+      {children}
+    </StyledLink>
   )
 }
