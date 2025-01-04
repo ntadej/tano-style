@@ -9,23 +9,44 @@ import {
   MenuItems,
   Transition,
 } from '@headlessui/react'
+import clsx from 'clsx'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Fragment, MouseEventHandler, ReactNode, useEffect, useState } from 'react'
-import { HiBars3, HiXMark } from 'react-icons/hi2'
+import {
+  ElementType,
+  Fragment,
+  MouseEventHandler,
+  ReactNode,
+  useEffect,
+  useState,
+} from 'react'
+import { HiBars3, HiLanguage, HiXMark } from 'react-icons/hi2'
 import { LuComputer, LuMoon, LuSun } from 'react-icons/lu'
-import { classNames } from '../utils'
 
-type NavigationItem = {
+export type NavigationItem = {
   name: string
   href: string
+  mobileOnly?: boolean
 }
+
+export type LocaleSetup = {
+  current: string
+  available: LanguageItem[]
+  callback: (nextLocale: string) => void
+}
+
+export type LanguageItem = {
+  name: string
+  id: string
+}
+
+export type LinkType = ElementType<{ href: string }>
 
 export function NavHamburgerButton({ open }: { open: boolean }) {
   return (
     <DisclosureButton
-      className={classNames(
+      className={clsx(
         'inline-flex items-center justify-center rounded-md p-2',
         'text-zinc-500 hover:bg-gray-100 hover:text-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-900 hover:dark:text-zinc-100',
         'focus:outline-none',
@@ -54,7 +75,7 @@ export function NavDropdownItem({
   return (
     <MenuItem as="li">
       <span
-        className={classNames(
+        className={clsx(
           'flex items-center p-2 text-sm',
           current
             ? 'text-brand-primary'
@@ -66,6 +87,48 @@ export function NavDropdownItem({
         {children}
       </span>
     </MenuItem>
+  )
+}
+
+export function LanguageMenu({ localeSetup }: { localeSetup: LocaleSetup }) {
+  return (
+    <Menu as="div" className="relative ml-3">
+      <MenuButton
+        className={clsx(
+          'flex rounded-md p-2',
+          'text-zinc-500 hover:bg-gray-100 hover:text-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-900 hover:dark:text-zinc-100',
+          'transition-colors duration-300',
+          'focus:outline-none',
+        )}
+      >
+        <span className="sr-only">Select theme</span>
+        <HiLanguage className="block h-6 w-6" aria-hidden="true" />
+      </MenuButton>
+      <Transition
+        as={Fragment}
+        enter="transition ease-out duration-100"
+        enterFrom="transform opacity-0 scale-95"
+        enterTo="transform opacity-100 scale-100"
+        leave="transition ease-in duration-75"
+        leaveFrom="transform opacity-100 scale-100"
+        leaveTo="transform opacity-0 scale-95"
+      >
+        <MenuItems
+          as="ul"
+          className="absolute right-0 z-10 mt-2 w-36 origin-top-right rounded-md bg-white py-1 shadow-lg shadow-zinc-900/5 ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-zinc-900 dark:shadow-zinc-200/5 dark:ring-zinc-200 dark:ring-opacity-5"
+        >
+          {localeSetup.available.map((locale) => (
+            <NavDropdownItem
+              key={locale.id}
+              current={localeSetup.current == locale.id}
+              action={() => localeSetup.callback(locale.id)}
+            >
+              {locale.name}
+            </NavDropdownItem>
+          ))}
+        </MenuItems>
+      </Transition>
+    </Menu>
   )
 }
 
@@ -85,7 +148,7 @@ export function ThemeMenu() {
   return (
     <Menu as="div" className="relative ml-3">
       <MenuButton
-        className={classNames(
+        className={clsx(
           'flex rounded-md p-2',
           'text-zinc-500 hover:bg-gray-100 hover:text-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-900 hover:dark:text-zinc-100',
           'transition-colors duration-300',
@@ -138,25 +201,32 @@ export function NavigationElement({
   href,
   current,
   list,
+  linkType,
+  mobileOnly,
 }: {
   name: string
   href: string
   current: boolean
   list?: boolean
+  linkType?: LinkType
+  mobileOnly?: boolean
 }) {
+  const LinkTypeRef = linkType || Link
+
   const ariaCurrent = current ? 'page' : undefined
-  const className: string = classNames(
+  const className: string = clsx(
     current
       ? 'text-brand-primary'
       : 'text-zinc-500 hover:text-zinc-700 dark:text-zinc-300 hover:dark:text-zinc-100 hover:bg-gray-100 dark:hover:bg-zinc-900',
-    list ? 'block' : '',
+    list && 'block',
+    mobileOnly && 'sm:hidden',
     'rounded-md px-3 py-2 font-medium text-base',
     'transition-colors duration-200',
   )
 
   return list ? (
     <DisclosureButton
-      as={Link}
+      as={linkType}
       href={href}
       className={className}
       aria-current={ariaCurrent}
@@ -164,17 +234,30 @@ export function NavigationElement({
       {name}
     </DisclosureButton>
   ) : (
-    <Link href={href} className={className} aria-current={ariaCurrent}>
+    <LinkTypeRef href={href} className={className} aria-current={ariaCurrent}>
       {name}
-    </Link>
+    </LinkTypeRef>
   )
 }
 
-export function Navigation({ items }: { items: NavigationItem[] }) {
+export function Navigation({
+  items,
+  title,
+  linkType,
+  localeSetup,
+}: {
+  items: NavigationItem[]
+  title?: string
+  linkType?: LinkType
+  localeSetup?: LocaleSetup
+}) {
   const pathname = usePathname()
 
   return (
-    <Disclosure as="nav" className="sticky top-0 z-10">
+    <Disclosure
+      as="nav"
+      className="sticky top-0 z-10 bg-white/85 backdrop-blur backdrop-filter dark:bg-zinc-950/85"
+    >
       {({ open }) => (
         <>
           <div className="container mx-auto px-3 sm:px-4">
@@ -185,6 +268,9 @@ export function Navigation({ items }: { items: NavigationItem[] }) {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <span className="logo block"></span>
+                  <span className="small-caps ml-3 px-3 py-1.5 text-lg font-bold text-zinc-600 dark:text-zinc-200">
+                    {title}
+                  </span>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-3">
@@ -194,6 +280,8 @@ export function Navigation({ items }: { items: NavigationItem[] }) {
                         name={item.name}
                         href={item.href}
                         current={pathname === item.href}
+                        linkType={linkType}
+                        mobileOnly={item.mobileOnly}
                       />
                     ))}
                   </div>
@@ -201,6 +289,7 @@ export function Navigation({ items }: { items: NavigationItem[] }) {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <ThemeMenu />
+                {localeSetup && <LanguageMenu localeSetup={localeSetup} />}
               </div>
             </div>
           </div>
@@ -223,6 +312,8 @@ export function Navigation({ items }: { items: NavigationItem[] }) {
                     href={item.href}
                     current={pathname === item.href}
                     list={true}
+                    linkType={linkType}
+                    mobileOnly={item.mobileOnly}
                   />
                 ))}
               </div>

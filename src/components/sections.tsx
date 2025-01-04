@@ -1,5 +1,5 @@
+import clsx from 'clsx'
 import { ReactNode } from 'react'
-import { classNames } from '../utils'
 import { StyledLink } from './links'
 
 interface LinkDict {
@@ -68,10 +68,10 @@ export function Content({
 }) {
   return (
     <div
-      className={classNames(
+      className={clsx(
         'prose prose-sm prose-zinc sm:prose-base dark:prose-invert',
-        fullWidth ? 'max-w-none' : '',
-        'prose-headings:small-caps prose-headings:mb-1',
+        fullWidth && 'max-w-none',
+        'prose-headings:small-caps prose-headings:mb-1 prose-headings:mt-2',
         'prose-headings:text-zinc-800 dark:prose-headings:text-zinc-100',
         'prose-a:underline prose-a:transition-all prose-a:duration-300',
         'prose-a:dark:text-zinc-200',
