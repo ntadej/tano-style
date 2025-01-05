@@ -44,11 +44,11 @@
     "typescript": "^5.7.2"
   },
   "lint-staged": {
-    "*.{cjs,mjs,ts,tsx}": [
+    "*.{js,cjs,mjs,ts,tsx}": [
       "prettier --write",
       "eslint --fix --max-warnings=0"
     ],
-    "*.{cjs,css,json,md,yaml}": [
+    "*.{cjs,css,json,md,yml,yaml}": [
       "prettier --write"
     ]
   },
