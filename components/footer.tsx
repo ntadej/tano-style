@@ -50,8 +50,8 @@ export function Footer({
     year = '2025'
   }
   return (
-    <footer className="mt-auto">
-      <div className="container mx-auto mb-2 mt-2 p-4 sm:mt-8">
+    <footer className="mt-auto bg-zinc-100 dark:bg-zinc-900/50">
+      <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col items-center sm:flex-row sm:justify-between">
           <p className="text-xs text-zinc-500 sm:text-sm dark:text-zinc-400">
             &copy; {year}{' '}
