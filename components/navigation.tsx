@@ -26,11 +26,11 @@ export type NavigationItem = {
 
 export type LocaleSetup = {
   current: string
-  available: LanguageItem[]
+  available: LocaleItem[]
   callback: (nextLocale: string) => void
 }
 
-export type LanguageItem = {
+export type LocaleItem = {
   name: string
   id: string
 }
@@ -82,13 +82,23 @@ export function NavDropdownItem({
   )
 }
 
-export function LanguageMenu({ localeSetup }: { localeSetup: LocaleSetup }) {
+export function LocaleMenu({
+  localeSetup,
+  disableDark,
+}: {
+  localeSetup: LocaleSetup
+  disableDark?: boolean
+}) {
   return (
     <Menu as="div" className="relative ml-3">
       <MenuButton
         className={clsx(
           'flex rounded-md p-2',
-          'text-zinc-500 hover:bg-gray-100 hover:text-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-900 hover:dark:text-zinc-100',
+          disableDark
+            ? 'text-zinc-600 hover:text-zinc-800'
+            : 'text-zinc-500 hover:bg-gray-100 hover:text-zinc-700',
+          !disableDark &&
+            'dark:text-zinc-300 dark:hover:bg-zinc-900 hover:dark:text-zinc-100',
           'transition-colors duration-300',
           'focus:outline-none',
         )}
@@ -124,7 +134,7 @@ export function LanguageMenu({ localeSetup }: { localeSetup: LocaleSetup }) {
   )
 }
 
-export function ThemeMenu() {
+export function ThemeMenu({ disableDark }: { disableDark?: boolean }) {
   const [mounted, setMounted] = useState(false)
   const { theme, resolvedTheme, setTheme } = useTheme()
 
@@ -142,7 +152,11 @@ export function ThemeMenu() {
       <MenuButton
         className={clsx(
           'flex rounded-md p-2',
-          'text-zinc-500 hover:bg-gray-100 hover:text-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-900 hover:dark:text-zinc-100',
+          disableDark
+            ? 'text-zinc-600 hover:text-zinc-800'
+            : 'text-zinc-500 hover:bg-gray-100 hover:text-zinc-700',
+          !disableDark &&
+            'dark:text-zinc-300 dark:hover:bg-zinc-900 hover:dark:text-zinc-100',
           'transition-colors duration-300',
           'focus:outline-none',
         )}
@@ -282,7 +296,7 @@ export function Navigation({
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <ThemeMenu />
-                {localeSetup && <LanguageMenu localeSetup={localeSetup} />}
+                {localeSetup && <LocaleMenu localeSetup={localeSetup} />}
               </div>
             </div>
           </div>
@@ -315,5 +329,20 @@ export function Navigation({
         </>
       )}
     </Disclosure>
+  )
+}
+
+export function NavigationControls({ localeSetup }: { localeSetup?: LocaleSetup }) {
+  return (
+    <nav className="absolute right-0 top-0 md:right-[50%]">
+      <div className="px-3 sm:px-4">
+        <div className="relative flex h-16 items-center justify-between">
+          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <ThemeMenu disableDark={true} />
+            {localeSetup && <LocaleMenu localeSetup={localeSetup} disableDark={true} />}
+          </div>
+        </div>
+      </div>
+    </nav>
   )
 }
