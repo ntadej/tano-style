@@ -12,7 +12,7 @@ import {
 import clsx from 'clsx'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { useSelectedLayoutSegment } from 'next/navigation'
 import { Fragment, MouseEventHandler, ReactNode, useEffect, useState } from 'react'
 import { HiBars3, HiLanguage, HiXMark } from 'react-icons/hi2'
 import { LuComputer, LuMoon, LuSun } from 'react-icons/lu'
@@ -243,7 +243,8 @@ export function Navigation({
   linkType?: LinkType
   localeSetup?: LocaleSetup
 }) {
-  const pathname = usePathname()
+  const selectedLayoutSegment = useSelectedLayoutSegment()
+  const pathname = selectedLayoutSegment ? `/${selectedLayoutSegment}` : '/'
 
   return (
     <Disclosure
