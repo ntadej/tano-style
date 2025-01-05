@@ -1,6 +1,7 @@
+import clsx from 'clsx'
 import { ReactNode, createElement } from 'react'
 import { IconType } from 'react-icons'
-import { classNames } from '../utils'
+import type { LinkType } from '../types'
 
 export function StyledLink({
   children,
@@ -9,6 +10,7 @@ export function StyledLink({
   target,
   rel,
   attribution,
+  linkType,
 }: {
   children: ReactNode
   href: string
@@ -16,7 +18,10 @@ export function StyledLink({
   target?: string
   rel?: string
   attribution?: boolean
+  linkType?: LinkType
 }) {
+  const LinkTypeRef = linkType || 'a'
+
   const extraProperties: { [key: string]: string } = {}
   if (target) {
     extraProperties['target'] = target
@@ -33,9 +38,40 @@ export function StyledLink({
   }
 
   return (
-    <a href={href} className={classNames(...className)} {...extraProperties}>
+    <LinkTypeRef href={href} className={clsx(...className)} {...extraProperties}>
       {children}
-    </a>
+    </LinkTypeRef>
+  )
+}
+
+export function Link({
+  children,
+  href,
+  target,
+  rel,
+  linkType,
+}: {
+  children: string
+  href: string
+  target?: string
+  rel?: string
+  linkType?: LinkType
+}) {
+  return (
+    <StyledLink
+      href={href}
+      target={target}
+      rel={rel}
+      linkType={linkType}
+      className={[
+        'font-medium text-zinc-900 dark:text-zinc-200',
+        'underline',
+        'transition-all duration-300',
+        'decoration-brand-primary decoration-from-font hover:decoration-2',
+      ]}
+    >
+      {children}
+    </StyledLink>
   )
 }
 

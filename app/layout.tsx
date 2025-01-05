@@ -3,7 +3,7 @@ import { rootMetadata } from '@/components/metadata'
 import { rootViewport } from '@/components/viewport'
 import { Metadata, Viewport } from 'next'
 
-import '@/_index.css'
+import '@/index.css'
 
 export default RootLayout
 

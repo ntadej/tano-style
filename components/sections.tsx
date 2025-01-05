@@ -1,37 +1,8 @@
 import clsx from 'clsx'
 import { ReactNode } from 'react'
-import { StyledLink } from './links'
 
 interface LinkDict {
   [Key: string]: string
-}
-
-export function Link({
-  children,
-  href,
-  target,
-  rel,
-}: {
-  children: string
-  href: string
-  target?: string
-  rel?: string
-}) {
-  return (
-    <StyledLink
-      href={href}
-      target={target}
-      rel={rel}
-      className={[
-        'font-medium text-zinc-900 dark:text-zinc-200',
-        'underline',
-        'transition-all duration-300',
-        'decoration-brand-primary decoration-from-font hover:decoration-2',
-      ]}
-    >
-      {children}
-    </StyledLink>
-  )
 }
 
 export function Section({

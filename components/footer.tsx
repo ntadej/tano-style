@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import type { LinkType } from '../types'
 import { StyledLink } from './links'
 
 export function FooterLink({
@@ -7,12 +8,14 @@ export function FooterLink({
   target,
   rel,
   attribution,
+  linkType,
 }: {
   children: ReactNode
   href: string
   target?: string
   rel?: string
   attribution?: boolean
+  linkType?: LinkType
 }) {
   return (
     <StyledLink
@@ -20,6 +23,7 @@ export function FooterLink({
       target={target}
       rel={rel}
       attribution={attribution}
+      linkType={linkType}
       className={[
         'mx-2 text-sm text-zinc-500 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300',
         'transition-colors duration-300',

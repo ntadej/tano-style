@@ -1,11 +1,17 @@
 import { ReactNode } from 'react'
-import { ibmPlexMono, ibmPlexSans } from '../fonts'
+import { ibmPlexMono, ibmPlexSans } from '../utils/fonts'
 import { Providers } from './providers'
 
-export function RootLayout({ children }: { children: ReactNode }) {
+export function RootLayout({
+  children,
+  locale,
+}: {
+  children: ReactNode
+  locale?: string
+}) {
   return (
     <html
-      lang="en"
+      lang={locale ? locale : 'en'}
       className={`${ibmPlexSans.variable} ${ibmPlexMono.variable}`}
       suppressHydrationWarning
     >

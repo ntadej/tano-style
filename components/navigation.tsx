@@ -13,16 +13,10 @@ import clsx from 'clsx'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import {
-  ElementType,
-  Fragment,
-  MouseEventHandler,
-  ReactNode,
-  useEffect,
-  useState,
-} from 'react'
+import { Fragment, MouseEventHandler, ReactNode, useEffect, useState } from 'react'
 import { HiBars3, HiLanguage, HiXMark } from 'react-icons/hi2'
 import { LuComputer, LuMoon, LuSun } from 'react-icons/lu'
+import type { LinkType } from '../types'
 
 export type NavigationItem = {
   name: string
@@ -40,8 +34,6 @@ export type LanguageItem = {
   name: string
   id: string
 }
-
-export type LinkType = ElementType<{ href: string }>
 
 export function NavHamburgerButton({ open }: { open: boolean }) {
   return (

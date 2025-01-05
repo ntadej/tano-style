@@ -1,4 +1,4 @@
-import { Button } from '@/components/buttons'
+import { ActionButton } from '@/components/buttons'
 import { ErrorLayout } from '@/components/layouts'
 import { siteName } from '@/components/metadata'
 import { Metadata } from 'next'
@@ -16,7 +16,7 @@ export default function Page() {
         className="flex-shrink-0 px-6 py-6 sm:border-l-2 sm:border-l-brand-primary sm:py-2"
       >
         <input type="hidden" name="rd" value="{{.Redirect}}" />
-        <Button type="submit">Sign in</Button>
+        <ActionButton type="submit">Sign in</ActionButton>
       </form>
     </ErrorLayout>
   )
