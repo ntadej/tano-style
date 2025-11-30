@@ -11,46 +11,44 @@
   },
   "scripts": {
     "prepare": "husky",
-    "lint:next": "next lint",
+    "lint:eslint": "eslint .",
     "lint:prettier": "prettier --check . --log-level warn",
     "lint:ts": "tsc --noEmit --declaration",
     "dev": "next dev --turbopack",
     "build": "next build"
   },
   "dependencies": {
-    "@headlessui/react": "^2.2.0",
+    "@headlessui/react": "^2.2.9",
     "clsx": "^2.1.1",
-    "next": "~15.1.6",
-    "next-themes": "^0.4.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-icons": "^5.4.0"
+    "next": "~16.0.6",
+    "next-themes": "^0.4.6",
+    "react": "~19.2.0",
+    "react-dom": "~19.2.0",
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.2.0",
-    "@tailwindcss/typography": "^0.5.16",
-    "@types/node": "^22.13.1",
-    "@types/react": "^19.0.8",
-    "autoprefixer": "^10.4.20",
-    "eslint": "^9.20.0",
-    "eslint-config-next": "~15.1.6",
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/node": "^22.19.1",
+    "@types/react": "~19.2.7",
+    "autoprefixer": "^10.4.22",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "~16.0.6",
     "husky": "^9.1.7",
-    "lint-staged": "^15.4.3",
-    "postcss": "^8.5.1",
-    "prettier": "3.4.2",
-    "prettier-plugin-organize-imports": "^4.1.0",
-    "prettier-plugin-tailwindcss": "~0.6.11",
-    "tailwindcss": "~3.4.17",
-    "typescript": "^5.7.3"
+    "lint-staged": "^16.2.7",
+    "postcss": "^8.5.6",
+    "prettier": "3.7.3",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "prettier-plugin-tailwindcss": "~0.7.1",
+    "tailwindcss": "~3.4.18",
+    "typescript": "^5.9.3"
   },
   "lint-staged": {
     "*.{js,cjs,mjs,ts,tsx}": [
       "prettier --write",
-      "eslint --fix --max-warnings=0"
+      "eslint --fix --max-warnings=0 --no-warn-ignored"
     ],
     "*.{cjs,css,json,md,yml,yaml}": [
       "prettier --write"
     ]
-  },
-  "packageManager": "pnpm@10.2.1+sha512.398035c7bd696d0ba0b10a688ed558285329d27ea994804a52bad9167d8e3a72bcb993f9699585d3ca25779ac64949ef422757a6c31102c12ab932e5cbe5cc92"
+  }
 }
