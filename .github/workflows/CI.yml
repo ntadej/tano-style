@@ -1,30 +1,24 @@
 name: Continuous Integration
 on: [push]
-
 jobs:
   build:
     runs-on: ${{ matrix.os }}
-
     strategy:
       matrix:
-        os: [ubuntu-22.04, macos-14]
-        node-version: [20.x, 22.x, 23.x, 24.x]
-
+        os: [ubuntu-24.04, macos-15]
+        node-version: [22.x, 24.x, 25.x]
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-
       - name: Use Latest Corepack
         run: |
           echo "Before: corepack version => $(corepack --version || echo 'not installed')"
           npm install -g corepack@latest
           echo "After : corepack version => $(corepack --version)"
           corepack enable
-
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
-
       - run: pnpm install
       - run: pnpm run build
