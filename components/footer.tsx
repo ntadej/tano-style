@@ -45,9 +45,9 @@ export function Footer({
   homeUrl?: string
   onlyCurrentYear?: boolean
 }) {
-  let year = '2004-2025'
+  let year = '2004-2026'
   if (typeof onlyCurrentYear !== undefined && onlyCurrentYear) {
-    year = '2025'
+    year = '2026'
   }
   return (
     <footer className="mt-auto bg-zinc-100 dark:bg-zinc-900/50">

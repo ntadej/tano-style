@@ -43,7 +43,7 @@ export function ErrorLayout({
         </div>
       </section>
       <footer className="container mx-auto flex flex-shrink-0 flex-grow-0 flex-col p-6 text-center text-sm text-zinc-500 dark:text-zinc-400">
-        &copy; 2025 Tadej Novak
+        &copy; 2026 Tadej Novak
       </footer>
     </>
   )
