@@ -11,7 +11,7 @@ Feel free to open a pull request if some content needs updating.
 You will need the following things properly installed on your computer.
 
 - [Git](http://git-scm.com)
-- [Node.js](https://nodejs.org) 20.x or later
+- [Node.js](https://nodejs.org) 22.x or later
 
 [web]: https://tano.si
 [license]: https://github.com/ntadej/tano-style/blob/master/LICENSE.md
