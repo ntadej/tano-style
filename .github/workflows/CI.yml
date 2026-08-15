@@ -9,7 +9,7 @@ jobs:
         node-version: [22.x, 24.x, 25.x]
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Use Latest Corepack
         run: |
           echo "Before: corepack version => $(corepack --version || echo 'not installed')"
@@ -33,7 +33,7 @@ jobs:
     needs: build
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Download artifacts
         uses: actions/download-artifact@v8
         with:
