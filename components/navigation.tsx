@@ -13,14 +13,7 @@ import clsx from 'clsx'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { useSelectedLayoutSegment } from 'next/navigation'
-import {
-  Fragment,
-  MouseEventHandler,
-  ReactNode,
-  useEffect,
-  useEffectEvent,
-  useState,
-} from 'react'
+import { Fragment, MouseEventHandler, ReactNode, useSyncExternalStore } from 'react'
 import { HiBars3, HiLanguage, HiXMark } from 'react-icons/hi2'
 import { LuComputer, LuMoon, LuSun } from 'react-icons/lu'
 import type { LinkType } from '../types'
@@ -141,18 +134,16 @@ export function LocaleMenu({
   )
 }
 
+const noopSubscribe = () => () => {}
+
 export function ThemeMenu({ disableDark }: { disableDark?: boolean }) {
-  const [mounted, setMounted] = useState(false)
+  // false during SSR and hydration, true on the client, so we can safely show the UI
+  const mounted = useSyncExternalStore(
+    noopSubscribe,
+    () => true,
+    () => false,
+  )
   const { theme, resolvedTheme, setTheme } = useTheme()
-
-  const onInit = useEffectEvent(() => {
-    setMounted(true)
-  })
-
-  // useEffect only runs on the client, so now we can safely show the UI
-  useEffect(() => {
-    onInit()
-  }, [])
 
   if (!mounted) {
     return null
